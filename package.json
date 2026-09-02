@@ -4,7 +4,8 @@
   "description": "11 Secrets de Beaute - Film de presentation premium (Remotion)",
   "scripts": {
     "dev": "remotion studio",
-    "build": "remotion render src/index.ts Main16x9 out/11secrets_16x9.mp4 --codec=h264",
+    "build": "echo 'Static site ready'",
+    "build:video": "remotion render src/index.ts Main16x9 out/11secrets_16x9.mp4 --codec=h264",
     "build:vertical": "remotion render src/index.ts Main9x16 out/11secrets_9x16.mp4 --codec=h264",
     "still": "remotion still src/index.ts Main16x9 out/still.png"
   },
