@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>11 Secrets de Beauté — Stratégie Digitale &amp; Acquisition Clientes</title>
+  <meta name="description" content="Proposition commerciale : stratégie publicitaire digitale et acquisition de clientes qualifiées pour 11 Secrets de Beauté à Lausanne et Renens.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="11 Secrets de Beauté — Stratégie Digitale">
+  <meta property="og:description" content="Proposition commerciale sur mesure pour l'acquisition de clientes à Lausanne et Renens.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            creme: '#F7F2E8',
+            ivory: '#FCF9F3',
+            sand: '#EFE7D8',
+            line: '#E4D9C7',
+            ink: '#1C1611',
+            moka: '#7C5F41',
+            gold: '#B89047',
+            goldlight: '#D4AF67',
+            mute: '#6E6356',
+            creamute: '#BAAC97'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- GSAP Core & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="bg-[#F7F2E8] text-[#1C1611] font-sans antialiased selection:bg-[#B89047] selection:text-[#FCF9F3] overflow-x-hidden">
+
+  <!-- Sprite SVG d'icônes intégrées -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7"/><path d="M2 8h20v4H2z"/><path d="M12 8v13"/><path d="M12 8c0-3-1-6-3.5-6C7 2 6.5 3.5 6.5 4.5 6.5 6.5 9 8 12 8z"/><path d="M12 8c0-3 1-6 3.5-6C17 2 17.5 3.5 17.5 4.5 17.5 6.5 15 8 12 8z"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+    <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3L8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></symbol>
+    <symbol id="i-medical" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></symbol>
+    <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.12 8.12L12 12"/><path d="M20 4L8.12 15.88"/><path d="M14.8 14.8L20 20"/></symbol>
+    <symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M9 16l2 2 4-4"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+  </svg>
+
+  <!-- Progress Bar Top -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Floating WhatsApp Action Button for Thumb Access -->
+  <a href="https://wa.me/41766606026?text=Bonjour,%20j'aimerais%20valider%20la%20proposition%20de%20campagne%20pour%2011%20Secrets" target="_blank" rel="noopener noreferrer" class="floating-wa" aria-label="Discuter sur WhatsApp">
+    <svg class="w-5 h-5 ic-fill" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+    <span class="hidden sm:inline">WhatsApp Direct</span>
+  </a>
+
+  <!-- ============================ HEADER / NAVIGATION ============================ -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 flex items-center justify-between">
+      <a href="#top" class="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-[#1C1611]">
+        11 Secrets <em class="text-[#7C5F41] not-italic font-normal">de Beauté</em>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-[#1C1611]/85">
+        <a href="#vision" class="hover:text-[#B89047] transition-colors py-1">La Vision</a>
+        <a href="#services" class="hover:text-[#B89047] transition-colors py-1">Services</a>
+        <a href="#cadeau" class="hover:text-[#B89047] transition-colors py-1">Site Offert</a>
+        <a href="#tarifs" class="hover:text-[#B89047] transition-colors py-1">Tarifs &amp; Plans</a>
+        <a href="#transparence" class="hover:text-[#B89047] transition-colors py-1">Transparence</a>
+      </nav>
+
+      <!-- CTA Actions -->
+      <div class="flex items-center gap-3">
+        <a href="tel:+41766606026" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-full border border-[#1C1611]/20 hover:bg-[#1C1611] hover:text-[#FCF9F3] transition-all">
+          <svg class="w-3.5 h-3.5 ic"><use href="#i-phone"/></svg>
+          <span>076 660 60 26</span>
+        </a>
+
+        <a href="https://wa.me/41766606026?text=Bonjour,%20j'aimerais%20valider%20la%20proposition%20de%20campagne%20pour%2011%20Secrets" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#1C1611] text-[#FCF9F3] px-4 py-2.5 rounded-full text-xs font-semibold hover:bg-[#7C5F41] transition-all shadow-sm">
+          <svg class="w-3.5 h-3.5 ic-fill"><use href="#i-whatsapp"/></svg>
+          <span>WhatsApp</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-[#1C1611] focus:outline-none" aria-label="Ouvrir le menu" aria-expanded="false">
+          <svg class="w-6 h-6 ic"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-[#FCF9F3] border-b border-[#E4D9C7] px-6 py-5 shadow-lg">
+      <nav class="flex flex-col gap-4 text-base font-semibold text-[#1C1611]">
+        <a href="#vision" class="py-2 border-b border-[#E4D9C7]/50">La Vision</a>
+        <a href="#services" class="py-2 border-b border-[#E4D9C7]/50">Services &amp; Vitrines</a>
+        <a href="#cadeau" class="py-2 border-b border-[#E4D9C7]/50">Site Web Offert</a>
+        <a href="#tarifs" class="py-2 border-b border-[#E4D9C7]/50">Tarifs &amp; Investissement</a>
+        <a href="#transparence" class="py-2 border-b border-[#E4D9C7]/50">Transparence Budgétaire</a>
+        <div class="pt-2 flex flex-col gap-3">
+          <a href="tel:+41766606026" class="flex items-center justify-center gap-2 py-3 rounded-xl border border-[#1C1611]/30 text-sm font-semibold">
+            <svg class="w-4 h-4 ic"><use href="#i-phone"/></svg>
+            Appeler (+41 76 660 60 26)
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================ HERO ============================ -->
+    <section id="top" class="min-h-[92vh] pt-28 pb-16 sm:pt-36 sm:pb-24 flex items-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          
+          <!-- Text Content -->
+          <div class="lg:col-span-7 flex flex-col items-start">
+            <div class="hero-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFE7D8] text-[#7C5F41] text-xs font-bold tracking-widest uppercase mb-6">
+              <span class="w-2 h-2 rounded-full bg-[#B89047] animate-pulse"></span>
+              Proposition Confidentielle · Lausanne &amp; Renens
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight text-[#1C1611] leading-[1.08] mb-6">
+              <span class="hero-title-line block">11 Secrets <em class="text-[#7C5F41] not-italic">de Beauté</em></span>
+              <span class="hero-title-line block text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-[#1C1611]/90">Stratégie Digitale</span>
+              <span class="hero-title-line block text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-[#B89047]">&amp; Acquisition Clientes</span>
+            </h1>
+
+            <p class="hero-desc text-base sm:text-lg text-[#6E6356] leading-relaxed max-w-xl mb-8">
+              Une présence publicitaire haute précision sur Instagram, Facebook et Google pour transformer les recherches locales en appels et rendez-vous WhatsApp confirmés dans votre salon.
+            </p>
+
+            <div class="hero-actions flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+              <a href="#tarifs" class="btn-luxury btn-dark w-full sm:w-auto">
+                <span class="btn-bg"></span>
+                <span class="btn-txt">
+                  <span>Consulter les offres</span>
+                  <svg class="w-4 h-4 ic"><use href="#i-arrow-down"/></svg>
+                </span>
+              </a>
+
+              <a href="https://wa.me/41766606026?text=Bonjour,%20j'aimerais%20valider%20la%20proposition%20de%20campagne%20pour%2011%20Secrets" target="_blank" rel="noopener noreferrer" class="btn-luxury btn-gold w-full sm:w-auto">
+                <span class="btn-bg"></span>
+                <span class="btn-txt">
+                  <svg class="w-4 h-4 ic-fill"><use href="#i-whatsapp"/></svg>
+                  <span>Échanger sur WhatsApp</span>
+                </span>
+              </a>
+            </div>
+
+            <div class="mt-8 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-semibold uppercase tracking-wider text-[#6E6356]/90">
+              <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-[#B89047] ic"><use href="#i-check"/></svg> Meta Ads</span>
+              <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-[#B89047] ic"><use href="#i-check"/></svg> Google Ads</span>
+              <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-[#B89047] ic"><use href="#i-check"/></svg> TikTok Ads</span>
+              <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-[#B89047] ic"><use href="#i-gift"/></svg> Site Web Offert</span>
+            </div>
+          </div>
+
+          <!-- Hero Visual with 4:5 format & Badge -->
+          <div class="lg:col-span-5 relative mt-4 lg:mt-0">
+            <div class="hero-img-container relative rounded-3xl overflow-hidden shadow-2xl border-4 border-[#FCF9F3] bg-[#FCF9F3]">
+              <img src="assets/images/hero-salon.jpg" alt="Ambiance luxueuse de 11 Secrets de Beauté" class="w-full h-[400px] sm:h-[480px] lg:h-[540px] object-cover rounded-2xl" loading="eager">
+              
+              <!-- Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#1C1611]/60 via-transparent to-transparent pointer-events-none"></div>
+
+              <!-- Caption Tag inside image -->
+              <div class="absolute bottom-5 left-5 right-5 p-4 rounded-xl bg-[#FCF9F3]/95 backdrop-blur-md border border-[#E4D9C7] text-[#1C1611]">
+                <p class="text-xs font-bold uppercase tracking-widest text-[#B89047]">Salon &amp; Spa · Vaud</p>
+                <p class="font-serif text-lg font-semibold leading-tight">Renens &amp; Grand Lausanne</p>
+              </div>
+            </div>
+
+            <!-- Rotating Seal -->
+            <div class="seal-container absolute -top-5 -left-5 sm:-top-8 sm:-left-8 w-24 h-24 sm:w-32 sm:h-32 pointer-events-none z-10">
+              <div class="w-full h-full rounded-full bg-[#FCF9F3] border border-[#E4D9C7] shadow-xl relative flex items-center justify-center">
+                <svg class="seal-svg absolute inset-0 w-full h-full" viewBox="0 0 100 100" aria-hidden="true">
+                  <defs><path id="sealPath" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
+                  <text fill="#7C5F41" style="font-size:6.4px;letter-spacing:1.8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700">
+                    <textPath href="#sealPath">11 SECRETS DE BEAUTÉ · SUISSE ·</textPath>
+                  </text>
+                </svg>
+                <span class="font-serif text-2xl sm:text-3xl font-bold italic text-[#7C5F41]">11</span>
+              </div>
+            </div>
+
+            <!-- Floating Mini Card -->
+            <div class="hidden sm:block absolute -bottom-6 -right-6 w-36 rounded-2xl p-2 bg-[#FCF9F3] border border-[#E4D9C7] shadow-xl float-subtle z-10">
+              <img src="assets/images/detail-spa.jpg" alt="Soins et produits haut de gamme" class="w-full aspect-[4/5] object-cover rounded-xl" loading="lazy">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ MARQUEE STRIP ============================ -->
+    <div class="overflow-hidden border-y border-[#E4D9C7] bg-[#FCF9F3] py-4" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="font-serif text-xl sm:text-2xl italic text-[#1C1611]/80 px-4 whitespace-nowrap">Head Spa Japonais</span>
+        <span class="w-2 h-2 rotate-45 bg-[#B89047] mx-4 flex-none"></span>
+        <span class="font-serif text-xl sm:text-2xl italic text-[#1C1611]/80 px-4 whitespace-nowrap">Onglerie Gel &amp; Acrylique</span>
+        <span class="w-2 h-2 rotate-45 bg-[#B89047] mx-4 flex-none"></span>
+        <span class="font-serif text-xl sm:text-2xl italic text-[#1C1611]/80 px-4 whitespace-nowrap">Soins Plasma &amp; Visage</span>
+        <span class="w-2 h-2 rotate-45 bg-[#B89047] mx-4 flex-none"></span>
+        <span class="font-serif text-xl sm:text-2xl italic text-[#1C1611]/80 px-4 whitespace-nowrap">Perruques Médicales &amp; Oncologiques</span>
+        <span class="w-2 h-2 rotate-45 bg-[#B89047] mx-4 flex-none"></span>
+        <span class="font-serif text-xl sm:text-2xl italic text-[#1C1611]/80 px-4 whitespace-nowrap">Afro-Esthétique &amp; Tresses</span>
+        <span class="w-2 h-2 rotate-45 bg-[#B89047] mx-4 flex-none"></span>
+        <span class="font-serif text-xl sm:text-2xl italic text-[#1C1611]/80 px-4 whitespace-nowrap">Formation Onglerie</span>
+        <span class="w-2 h-2 rotate-45 bg-[#B89047] mx-4 flex-none"></span>
+        <span class="font-serif text-xl sm:text-2xl italic text-[#1C1611]/80 px-4 whitespace-nowrap">Head Spa Japonais</span>
+        <span class="w-2 h-2 rotate-45 bg-[#B89047] mx-4 flex-none"></span>
+        <span class="font-serif text-xl sm:text-2xl italic text-[#1C1611]/80 px-4 whitespace-nowrap">Onglerie Gel &amp; Acrylique</span>
+        <span class="w-2 h-2 rotate-45 bg-[#B89047] mx-4 flex-none"></span>
+        <span class="font-serif text-xl sm:text-2xl italic text-[#1C1611]/80 px-4 whitespace-nowrap">Soins Plasma &amp; Visage</span>
+        <span class="w-2 h-2 rotate-45 bg-[#B89047] mx-4 flex-none"></span>
+        <span class="font-serif text-xl sm:text-2xl italic text-[#1C1611]/80 px-4 whitespace-nowrap">Perruques Médicales &amp; Oncologiques</span>
+        <span class="w-2 h-2 rotate-45 bg-[#B89047] mx-4 flex-none"></span>
+        <span class="font-serif text-xl sm:text-2xl italic text-[#1C1611]/80 px-4 whitespace-nowrap">Afro-Esthétique &amp; Tresses</span>
+        <span class="w-2 h-2 rotate-45 bg-[#B89047] mx-4 flex-none"></span>
+        <span class="font-serif text-xl sm:text-2xl italic text-[#1C1611]/80 px-4 whitespace-nowrap">Formation Onglerie</span>
+        <span class="w-2 h-2 rotate-45 bg-[#B89047] mx-4 flex-none"></span>
+      </div>
+    </div>
+
+    <!-- ============================ 01 · VISION ============================ -->
+    <section id="vision" class="py-20 sm:py-28 bg-[#FCF9F3]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        
+        <!-- Section Header -->
+        <div class="mb-14 sm:mb-20 max-w-3xl" data-gsap="fade-up">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="font-serif italic text-2xl text-[#7C5F41] font-semibold">01</span>
+            <span class="w-12 h-[1px] bg-[#7C5F41]/40" data-line-reveal></span>
+            <span class="text-xs font-bold tracking-widest uppercase text-[#6E6356]">La Vision &amp; Méthode</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1C1611] leading-tight">
+            Le téléphone sonne, l'agenda se remplit.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          
+          <div class="lg:col-span-5" data-gsap="fade-up">
+            <h3 class="font-serif text-2xl sm:text-3xl font-medium text-[#1C1611] leading-snug mb-5">
+              Vos clientes idéales sont déjà à la recherche de vos prestations à Lausanne et Renens.
+            </h3>
+            <p class="text-base text-[#6E6356] leading-relaxed mb-6">
+              Sans visibilité ciblée, ce sont les établissements concurrents qui captent leur attention. Notre stratégie connecte directement vos 6 univers de beauté avec les clientes prêtes à réserver, en simplifiant au maximum le passage à l'action.
+            </p>
+            <div class="p-5 rounded-2xl bg-[#F7F2E8] border border-[#E4D9C7]">
+              <p class="text-sm font-semibold text-[#7C5F41] mb-1">Objectif concret :</p>
+              <p class="text-sm text-[#1C1611]">Générer des demandes quotidiennes d'appels et messages WhatsApp directs vers votre salon.</p>
+            </div>
+          </div>
+
+          <!-- 3 Steps -->
+          <div class="lg:col-span-7 flex flex-col gap-6" data-gsap-group>
+            
+            <div class="p-6 sm:p-7 rounded-2xl bg-[#F7F2E8] border border-[#E4D9C7] flex gap-5 items-start" data-gsap-item>
+              <span class="w-12 h-12 rounded-full bg-[#FCF9F3] border border-[#7C5F41]/30 text-[#7C5F41] flex items-center justify-center flex-none shadow-sm">
+                <svg class="w-5 h-5 ic"><use href="#i-target"/></svg>
+              </span>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-[#B89047]">Étape 01</span>
+                <h4 class="font-serif text-2xl font-semibold text-[#1C1611] mt-1 mb-2">Campagnes Publicitaires Ciblées</h4>
+                <p class="text-sm text-[#6E6356] leading-relaxed">
+                  Diffusion sur Meta (Instagram &amp; Facebook), Google Ads et TikTok Ads, géolocalisées avec précision sur Lausanne, Renens et l'ouest lausannois.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-6 sm:p-7 rounded-2xl bg-[#F7F2E8] border border-[#E4D9C7] flex gap-5 items-start" data-gsap-item>
+              <span class="w-12 h-12 rounded-full bg-[#FCF9F3] border border-[#7C5F41]/30 text-[#7C5F41] flex items-center justify-center flex-none shadow-sm">
+                <svg class="w-5 h-5 ic"><use href="#i-message"/></svg>
+              </span>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-[#B89047]">Étape 02</span>
+                <h4 class="font-serif text-2xl font-semibold text-[#1C1611] mt-1 mb-2">Contact Immédiat en 1 Clic</h4>
+                <p class="text-sm text-[#6E6356] leading-relaxed">
+                  Les annonces redirigent vers des boutons directs d'appel téléphonique et de discussion WhatsApp pré-remplie, évitant tout parcours complexe.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-6 sm:p-7 rounded-2xl bg-[#F7F2E8] border border-[#E4D9C7] flex gap-5 items-start" data-gsap-item>
+              <span class="w-12 h-12 rounded-full bg-[#FCF9F3] border border-[#7C5F41]/30 text-[#7C5F41] flex items-center justify-center flex-none shadow-sm">
+                <svg class="w-5 h-5 ic"><use href="#i-phone"/></svg>
+              </span>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-[#B89047]">Étape 03</span>
+                <h4 class="font-serif text-2xl font-semibold text-[#1C1611] mt-1 mb-2">Réservation &amp; Sérénité</h4>
+                <p class="text-sm text-[#6E6356] leading-relaxed">
+                  Vous vous concentrez sur l'excellence de vos soins et l'accueil des clientes, tandis que l'acquisition tourne en continu en arrière-plan.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Metrics Strip -->
+        <div class="mt-16 sm:mt-20 pt-12 border-t border-[#E4D9C7] grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center" data-gsap-group>
+          <div class="p-4 rounded-xl" data-gsap-item>
+            <p class="font-serif text-4xl sm:text-5xl font-bold text-[#7C5F41]" data-count-target="3">0</p>
+            <p class="text-xs font-bold uppercase tracking-widest text-[#6E6356] mt-2">Plateformes Ads (Meta, Google, TikTok)</p>
+          </div>
+          <div class="p-4 rounded-xl" data-gsap-item>
+            <p class="font-serif text-4xl sm:text-5xl font-bold text-[#7C5F41]" data-count-target="6">0</p>
+            <p class="text-xs font-bold uppercase tracking-widest text-[#6E6356] mt-2">Univers de Beauté Valorises</p>
+          </div>
+          <div class="p-4 rounded-xl" data-gsap-item>
+            <p class="font-serif text-4xl sm:text-5xl font-bold text-[#7C5F41]" data-count-target="1">0</p>
+            <p class="text-xs font-bold uppercase tracking-widest text-[#6E6356] mt-2">Nouveau Site Web Offert</p>
+          </div>
+          <div class="p-4 rounded-xl" data-gsap-item>
+            <p class="font-serif text-4xl sm:text-5xl font-bold text-[#7C5F41]" data-count-target="5">0</p>
+            <p class="text-xs font-bold uppercase tracking-widest text-[#6E6356] mt-2">Jours pour Lancer les Campagnes</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================ 02 · SERVICES & VITRINES ============================ -->
+    <section id="services" class="py-20 sm:py-28 bg-[#F7F2E8]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        
+        <!-- Header -->
+        <div class="mb-14 sm:mb-20 max-w-3xl" data-gsap="fade-up">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="font-serif italic text-2xl text-[#7C5F41] font-semibold">02</span>
+            <span class="w-12 h-[1px] bg-[#7C5F41]/40" data-line-reveal></span>
+            <span class="text-xs font-bold tracking-widest uppercase text-[#6E6356]">Mise en Valeur des Soins</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1C1611] leading-tight">
+            Six univers d'exception, une même exigence.
+          </h2>
+          <p class="mt-4 text-base text-[#6E6356]">
+            Chaque prestation bénéficie de visuels sur mesure et d'un ciblage publicitaire spécifique afin de séduire la clientèle recherchant exactement cette expertise.
+          </p>
+        </div>
+
+        <!-- 6 Vertical Visual Cards (2 columns on tablet, 3 on desktop, 1 on mobile) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" data-gsap-group>
+          
+          <!-- Card 1: Head Spa Japonais -->
+          <article class="service-card rounded-3xl bg-[#FCF9F3] border border-[#E4D9C7] overflow-hidden flex flex-col shadow-sm" data-gsap-item>
+            <div class="relative overflow-hidden aspect-[4/5] sm:aspect-[4/5] bg-[#EFE7D8]">
+              <img src="assets/images/head-spa.jpg" alt="Rituel Head Spa Japonais à Renens" class="service-img w-full h-full object-cover" loading="lazy">
+              <span class="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FCF9F3]/90 backdrop-blur-md text-[#7C5F41] text-xs font-bold uppercase tracking-wider">
+                <svg class="w-3.5 h-3.5 ic"><use href="#i-droplet"/></svg>
+                <span>Soin 01</span>
+              </span>
+            </div>
+            <div class="p-6 sm:p-7 flex flex-col flex-grow justify-between">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-[#B89047]">Relaxation Profonde</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-[#1C1611] mt-1 mb-2">Head Spa Japonais</h3>
+                <p class="text-sm text-[#6E6356] leading-relaxed">
+                  Soin holistique du cuir chevelu, arche d'eau circulatoire et modelage crânien apaisant, inspiré des rituels traditionnels nippons.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-[#E4D9C7]/60 flex items-center justify-between text-xs font-bold text-[#7C5F41]">
+                <span>Ciblage : Bien-être &amp; Anti-stress</span>
+                <svg class="w-4 h-4 ic"><use href="#i-arrow-up-right"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Onglerie Avancée -->
+          <article class="service-card rounded-3xl bg-[#FCF9F3] border border-[#E4D9C7] overflow-hidden flex flex-col shadow-sm" data-gsap-item>
+            <div class="relative overflow-hidden aspect-[4/5] bg-[#EFE7D8]">
+              <img src="assets/images/ongles.jpg" alt="Onglerie gel et acrylique à Lausanne" class="service-img w-full h-full object-cover" loading="lazy">
+              <span class="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FCF9F3]/90 backdrop-blur-md text-[#7C5F41] text-xs font-bold uppercase tracking-wider">
+                <svg class="w-3.5 h-3.5 ic"><use href="#i-gem"/></svg>
+                <span>Soin 02</span>
+              </span>
+            </div>
+            <div class="p-6 sm:p-7 flex flex-col flex-grow justify-between">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-[#B89047]">Beauté des Mains</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-[#1C1611] mt-1 mb-2">Onglerie Avancée</h3>
+                <p class="text-sm text-[#6E6356] leading-relaxed">
+                  Pose en acrylique, gel porcelaine, gainage sur ongles naturels, nail art raffiné et finitions longue tenue d'une grande finesse.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-[#E4D9C7]/60 flex items-center justify-between text-xs font-bold text-[#7C5F41]">
+                <span>Ciblage : Manucure &amp; Événements</span>
+                <svg class="w-4 h-4 ic"><use href="#i-arrow-up-right"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Perruques Médicales & Oncologiques -->
+          <article class="service-card rounded-3xl bg-[#FCF9F3] border border-[#E4D9C7] overflow-hidden flex flex-col shadow-sm" data-gsap-item>
+            <div class="relative overflow-hidden aspect-[4/5] bg-[#EFE7D8]">
+              <img src="assets/images/perruques-medicales.jpg" alt="Perruques médicales et oncologie bienveillante" class="service-img w-full h-full object-cover" loading="lazy">
+              <span class="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FCF9F3]/90 backdrop-blur-md text-[#7C5F41] text-xs font-bold uppercase tracking-wider">
+                <svg class="w-3.5 h-3.5 ic"><use href="#i-medical"/></svg>
+                <span>Soin 03</span>
+              </span>
+            </div>
+            <div class="p-6 sm:p-7 flex flex-col flex-grow justify-between">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-[#B89047]">Espace Médical &amp; Écoute</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-[#1C1611] mt-1 mb-2">Perruques Oncologiques</h3>
+                <p class="text-sm text-[#6E6356] leading-relaxed">
+                  Prothèses capillaires haut de gamme, perruques médicales et accompagnement confidentiel empreint de dignité et de douceur.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-[#E4D9C7]/60 flex items-center justify-between text-xs font-bold text-[#7C5F41]">
+                <span>Ciblage : Santé &amp; Soins de Support</span>
+                <svg class="w-4 h-4 ic"><use href="#i-arrow-up-right"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Afro-Esthétique & Coiffure -->
+          <article class="service-card rounded-3xl bg-[#FCF9F3] border border-[#E4D9C7] overflow-hidden flex flex-col shadow-sm" data-gsap-item>
+            <div class="relative overflow-hidden aspect-[4/5] bg-[#EFE7D8]">
+              <img src="assets/images/afro-coiffure.jpg" alt="Coiffure afro et tresses soignées" class="service-img w-full h-full object-cover" loading="lazy">
+              <span class="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FCF9F3]/90 backdrop-blur-md text-[#7C5F41] text-xs font-bold uppercase tracking-wider">
+                <svg class="w-3.5 h-3.5 ic"><use href="#i-scissors"/></svg>
+                <span>Soin 04</span>
+              </span>
+            </div>
+            <div class="p-6 sm:p-7 flex flex-col flex-grow justify-between">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-[#B89047]">Expertise Capillaire</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-[#1C1611] mt-1 mb-2">Afro-Esthétique &amp; Tresses</h3>
+                <p class="text-sm text-[#6E6356] leading-relaxed">
+                  Tressage minutieux, tissages d'exception et protocoles de nutrition adaptés aux cheveux texturés, frisés et crépus.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-[#E4D9C7]/60 flex items-center justify-between text-xs font-bold text-[#7C5F41]">
+                <span>Ciblage : Cheveux Texturés &amp; Tresses</span>
+                <svg class="w-4 h-4 ic"><use href="#i-arrow-up-right"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Soins Plasma & Esthétique -->
+          <article class="service-card rounded-3xl bg-[#FCF9F3] border border-[#E4D9C7] overflow-hidden flex flex-col shadow-sm" data-gsap-item>
+            <div class="relative overflow-hidden aspect-[4/5] bg-[#EFE7D8]">
+              <img src="assets/images/soins-plasma.jpg" alt="Soins plasma et revitalisation du visage" class="service-img w-full h-full object-cover" loading="lazy">
+              <span class="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FCF9F3]/90 backdrop-blur-md text-[#7C5F41] text-xs font-bold uppercase tracking-wider">
+                <svg class="w-3.5 h-3.5 ic"><use href="#i-heart"/></svg>
+                <span>Soin 05</span>
+              </span>
+            </div>
+            <div class="p-6 sm:p-7 flex flex-col flex-grow justify-between">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-[#B89047]">Régénération Cutanée</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-[#1C1611] mt-1 mb-2">Soins Plasma &amp; Visage</h3>
+                <p class="text-sm text-[#6E6356] leading-relaxed">
+                  Protocoles anti-âge, éclat du teint, raffermissement et soins hydratants intensifs personnalisés selon chaque type de peau.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-[#E4D9C7]/60 flex items-center justify-between text-xs font-bold text-[#7C5F41]">
+                <span>Ciblage : Soins Anti-Âge &amp; Éclat</span>
+                <svg class="w-4 h-4 ic"><use href="#i-arrow-up-right"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Recrutement Formatrice Onglerie -->
+          <article class="service-card rounded-3xl bg-[#FCF9F3] border border-[#E4D9C7] overflow-hidden flex flex-col shadow-sm" data-gsap-item>
+            <div class="relative overflow-hidden aspect-[4/5] bg-[#EFE7D8]">
+              <img src="assets/images/formation-onglerie.jpg" alt="Recrutement et formation professionnelle onglerie" class="service-img w-full h-full object-cover" loading="lazy">
+              <span class="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FCF9F3]/90 backdrop-blur-md text-[#7C5F41] text-xs font-bold uppercase tracking-wider">
+                <svg class="w-3.5 h-3.5 ic"><use href="#i-user-plus"/></svg>
+                <span>Opportunité 06</span>
+              </span>
+            </div>
+            <div class="p-6 sm:p-7 flex flex-col flex-grow justify-between">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-[#B89047]">Transmission &amp; Équipe</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-[#1C1611] mt-1 mb-2">Formation Onglerie</h3>
+                <p class="text-sm text-[#6E6356] leading-relaxed">
+                  Campagne ciblée pour recruter une formatrice expérimentée en onglerie et attirer de nouvelles élèves passionnées pour vos ateliers.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-[#E4D9C7]/60 flex items-center justify-between text-xs font-bold text-[#7C5F41]">
+                <span>Ciblage : Recrutement &amp; Masterclasses</span>
+                <svg class="w-4 h-4 ic"><use href="#i-arrow-up-right"/></svg>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 03 · SITE VITRINE OFFERT ============================ -->
+    <section id="cadeau" class="py-20 sm:py-28 bg-[#1C1611] text-[#FCF9F3] relative overflow-hidden">
+      
+      <!-- Big watermark 11 in background -->
+      <span class="absolute -top-12 -right-10 font-serif text-[280px] font-bold text-[#FCF9F3]/[0.03] select-none pointer-events-none leading-none">11</span>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <div class="lg:col-span-6" data-gsap="fade-up">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-serif italic text-2xl text-[#B89047] font-semibold">03</span>
+              <span class="w-12 h-[1px] bg-[#B89047]/60" data-line-reveal></span>
+              <span class="text-xs font-bold tracking-widest uppercase text-[#BAAC97]">Inclus Sans Frais</span>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-tight text-[#FCF9F3] mb-6">
+              Votre nouveau site vitrine, <em class="text-[#B89047] not-italic">entièrement offert.</em>
+            </h2>
+
+            <p class="text-base text-[#BAAC97] leading-relaxed mb-8">
+              En complément de la gestion publicitaire, nous concevons votre site internet sur mesure : élégant, ultra-rapide et conçu pour faciliter la prise de rendez-vous pour toutes les générations.
+            </p>
+
+            <ul class="space-y-4 text-sm text-[#FCF9F3]/90">
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#B89047]/20 text-[#B89047] flex items-center justify-center flex-none mt-0.5">
+                  <svg class="w-3.5 h-3.5 ic"><use href="#i-check"/></svg>
+                </span>
+                <span>Design premium valorisant l'image haut de gamme de votre salon</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#B89047]/20 text-[#B89047] flex items-center justify-center flex-none mt-0.5">
+                  <svg class="w-3.5 h-3.5 ic"><use href="#i-check"/></svg>
+                </span>
+                <span>Navigation fluide et contrastes soignés, idéal pour la clientèle senior</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#B89047]/20 text-[#B89047] flex items-center justify-center flex-none mt-0.5">
+                  <svg class="w-3.5 h-3.5 ic"><use href="#i-check"/></svg>
+                </span>
+                <span>Bouton d'appel direct et bouton WhatsApp persistant sur mobile</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-[#B89047]/20 text-[#B89047] flex items-center justify-center flex-none mt-0.5">
+                  <svg class="w-3.5 h-3.5 ic"><use href="#i-check"/></svg>
+                </span>
+                <span>Hébergement haute performance et nom de domaine optimisé</span>
+              </li>
+            </ul>
+
+            <!-- Free Gift Badge -->
+            <div class="mt-10 p-5 rounded-2xl bg-[#282018] border border-[#B89047]/40 flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-[#B89047] text-[#1C1611] flex items-center justify-center flex-none font-bold">
+                <svg class="w-6 h-6 ic"><use href="#i-gift"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-[#B89047]">Cadeau inclus dans la prestation</p>
+                <p class="text-lg font-serif font-bold text-[#FCF9F3]">Valeur marché offerte : CHF 1'500.– (0 CHF pour vous)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Mobile/Tablet Mockup Preview -->
+          <div class="lg:col-span-6" data-gsap="fade-up">
+            <div class="mx-auto max-w-md rounded-3xl bg-[#241E17] border border-[#3A3128] p-3 shadow-2xl">
+              
+              <!-- Mockup Browser Bar -->
+              <div class="flex items-center gap-2 px-3 py-2 border-b border-[#3A3128] text-xs text-[#BAAC97]">
+                <div class="flex gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#FF5F56]"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></span>
+                </div>
+                <div class="flex-1 text-center bg-[#1C1611] py-1 rounded-full text-[11px] font-mono text-[#BAAC97]/80">
+                  11secretsdebeaute.ch
+                </div>
+              </div>
+
+              <!-- Mockup Screen Interior -->
+              <div class="bg-[#FCF9F3] text-[#1C1611] rounded-2xl p-5 mt-2">
+                <div class="flex items-center justify-between pb-4 border-b border-[#E4D9C7]">
+                  <span class="font-serif font-bold text-lg">11 Secrets <em>de Beauté</em></span>
+                  <a href="tel:+41766606026" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-[#1C1611] text-[#FCF9F3]">
+                    <svg class="w-3 h-3 ic"><use href="#i-phone"/></svg> Appeler
+                  </a>
+                </div>
+
+                <div class="py-6 text-center">
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-[#B89047]">Institut &amp; Bien-Être</span>
+                  <h4 class="font-serif text-2xl font-bold mt-1 text-[#1C1611]">Votre beauté, nos secrets.</h4>
+                  <p class="text-xs text-[#6E6356] mt-2 max-w-xs mx-auto">Head Spa, onglerie raffinée, soins plasma &amp; perruques médicales à Renens.</p>
+                  
+                  <div class="mt-4 flex flex-wrap gap-2 justify-center">
+                    <a href="tel:+41766606026" class="px-4 py-2 rounded-lg bg-[#1C1611] text-[#FCF9F3] text-xs font-semibold inline-flex items-center gap-1.5">
+                      <svg class="w-3.5 h-3.5 ic"><use href="#i-phone"/></svg> 076 660 60 26
+                    </a>
+                    <a href="https://wa.me/41766606026?text=Bonjour,%20j'aimerais%20prendre%20rendez-vous%20au%20salon" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-[#25D366] text-white text-xs font-semibold inline-flex items-center gap-1.5">
+                      <svg class="w-3.5 h-3.5 ic-fill"><use href="#i-whatsapp"/></svg> WhatsApp
+                    </a>
+                  </div>
+                </div>
+
+                <div class="space-y-2">
+                  <div class="p-2.5 rounded-xl bg-[#F7F2E8] border border-[#E4D9C7] flex items-center justify-between text-xs font-medium">
+                    <span>✨ Head Spa Japonais</span>
+                    <span class="text-[#7C5F41] font-bold">Dès 120 CHF</span>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-[#F7F2E8] border border-[#E4D9C7] flex items-center justify-between text-xs font-medium">
+                    <span>💅 Pose Complète Gel &amp; Acrylique</span>
+                    <span class="text-[#7C5F41] font-bold">Dès 90 CHF</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 04 · TARIFS & FORMULES ============================ -->
+    <section id="tarifs" class="py-20 sm:py-28 bg-[#F7F2E8]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16" data-gsap="fade-up">
+          <div class="inline-flex items-center gap-3 mb-4">
+            <span class="font-serif italic text-2xl text-[#7C5F41] font-semibold">04</span>
+            <span class="w-12 h-[1px] bg-[#7C5F41]/40" data-line-reveal></span>
+            <span class="text-xs font-bold tracking-widest uppercase text-[#6E6356]">Investissement &amp; Formules</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1C1611] leading-tight">
+            Deux options claires pour dynamiser votre salon.
+          </h2>
+          <p class="mt-4 text-base text-[#6E6356]">
+            Des honoraires fixes, transparents et sans frais cachés pour attirer des clientes fidèles semaine après semaine.
+          </p>
+        </div>
+
+        <!-- Pricing Cards: Stacked on Mobile (flex-col), 2 columns on desktop (flex-row) -->
+        <div class="flex flex-col lg:flex-row gap-8 items-stretch max-w-5xl mx-auto" data-gsap-group>
+          
+          <!-- Option A: 3 Mois -->
+          <article class="plan-card flex-1 p-8 sm:p-10 rounded-3xl bg-[#FCF9F3] border border-[#E4D9C7] flex flex-col justify-between shadow-sm relative" data-gsap-item>
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-[#6E6356]">Formule 01</span>
+                <span class="px-3 py-1 rounded-full bg-[#EFE7D8] text-[#7C5F41] text-xs font-bold">Engagement 3 mois</span>
+              </div>
+
+              <h3 class="font-serif text-3xl font-semibold text-[#1C1611] mb-2">Lancement &amp; Validation</h3>
+              <p class="text-sm text-[#6E6356] mb-6">Idéal pour valider la rentabilité publicitaire et acquérir vos premières cohortes de nouvelles clientes.</p>
+
+              <!-- Price -->
+              <div class="flex items-baseline gap-2 mb-8 pb-6 border-b border-[#E4D9C7]">
+                <span class="font-serif text-5xl sm:text-6xl font-bold text-[#1C1611]">750</span>
+                <span class="font-serif text-2xl text-[#7C5F41]">CHF</span>
+                <span class="text-sm text-[#6E6356]">/ mois</span>
+              </div>
+
+              <!-- Feature List -->
+              <ul class="space-y-3.5 text-sm text-[#1C1611]/85 mb-8">
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-[#EFE7D8] text-[#7C5F41] flex items-center justify-center flex-none mt-0.5">
+                    <svg class="w-3 h-3 ic"><use href="#i-check"/></svg>
+                  </span>
+                  <span>Publicités Meta Ads (Instagram &amp; Facebook)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-[#EFE7D8] text-[#7C5F41] flex items-center justify-center flex-none mt-0.5">
+                    <svg class="w-3 h-3 ic"><use href="#i-check"/></svg>
+                  </span>
+                  <span>Publicités Google Ads (Recherches locales Lausanne/Renens)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-[#EFE7D8] text-[#7C5F41] flex items-center justify-center flex-none mt-0.5">
+                    <svg class="w-3 h-3 ic"><use href="#i-check"/></svg>
+                  </span>
+                  <span>Campagne de recrutement : Formatrice en onglerie</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-[#EFE7D8] text-[#7C5F41] flex items-center justify-center flex-none mt-0.5">
+                    <svg class="w-3 h-3 ic"><use href="#i-check"/></svg>
+                  </span>
+                  <span class="font-semibold text-[#7C5F41]">Nouveau site web vitrine inclus (Offert)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-[#EFE7D8] text-[#7C5F41] flex items-center justify-center flex-none mt-0.5">
+                    <svg class="w-3 h-3 ic"><use href="#i-check"/></svg>
+                  </span>
+                  <span>Facturation mensuelle sans frais cachés</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between py-4 border-t border-[#E4D9C7] text-sm mb-6">
+                <span class="font-medium text-[#6E6356]">Total sur 3 mois</span>
+                <span class="font-serif text-2xl font-bold text-[#1C1611]">2'250 CHF</span>
+              </div>
+
+              <a href="https://wa.me/41766606026?text=Bonjour,%20je%20souhaite%20valider%20l'Option%20A%20(Lancement%203%20mois)%20pour%2011%20Secrets" target="_blank" rel="noopener noreferrer" class="btn-luxury btn-outline-dark w-full">
+                <span class="btn-bg"></span>
+                <span class="btn-txt">
+                  <span>Choisir l'Option A</span>
+                  <svg class="w-4 h-4 ic"><use href="#i-arrow-right"/></svg>
+                </span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Option B: 6 Mois (Recommandée) -->
+          <article class="plan-card flex-1 p-8 sm:p-10 rounded-3xl bg-[#1C1611] text-[#FCF9F3] border-2 border-[#B89047] flex flex-col justify-between shadow-2xl relative" data-gsap-item>
+            
+            <!-- Recommended Badge -->
+            <div class="absolute -top-4 left-8 px-4 py-1 rounded-full bg-[#B89047] text-[#1C1611] text-xs font-bold uppercase tracking-widest shadow-md">
+              Option Recommandée
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-4 mt-2 sm:mt-0">
+                <span class="text-xs font-bold uppercase tracking-widest text-[#BAAC97]">Formule 02</span>
+                <span class="px-3 py-1 rounded-full bg-[#B89047]/20 text-[#B89047] border border-[#B89047]/40 text-xs font-bold">Engagement 6 mois</span>
+              </div>
+
+              <h3 class="font-serif text-3xl font-semibold text-[#FCF9F3] mb-2">Croissance &amp; Fidélisation</h3>
+              <p class="text-sm text-[#BAAC97] mb-6">La solution la plus complète pour installer une autorité pérenne et fidéliser votre clientèle sur le long terme.</p>
+
+              <!-- Price with discount badge -->
+              <div class="flex flex-wrap items-baseline gap-2 mb-8 pb-6 border-b border-[#3A3128]">
+                <span class="font-serif text-5xl sm:text-6xl font-bold text-[#FCF9F3]">550</span>
+                <span class="font-serif text-2xl text-[#B89047]">CHF</span>
+                <span class="text-sm text-[#BAAC97]">/ mois</span>
+                <span class="ml-auto inline-flex items-center px-2.5 py-1 rounded-md bg-[#B89047]/20 text-[#B89047] text-xs font-bold">
+                  Économie de 1'200 CHF
+                </span>
+              </div>
+
+              <!-- Feature List -->
+              <ul class="space-y-3.5 text-sm text-[#FCF9F3]/90 mb-8">
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-[#B89047]/30 text-[#B89047] flex items-center justify-center flex-none mt-0.5">
+                    <svg class="w-3 h-3 ic"><use href="#i-check"/></svg>
+                  </span>
+                  <span><strong>Tout le pack de l'Option A</strong> (Meta + Google Ads)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-[#B89047]/30 text-[#B89047] flex items-center justify-center flex-none mt-0.5">
+                    <svg class="w-3 h-3 ic"><use href="#i-check"/></svg>
+                  </span>
+                  <span>Campagnes vidéo immersives <strong>TikTok Ads</strong></span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-[#B89047]/30 text-[#B89047] flex items-center justify-center flex-none mt-0.5">
+                    <svg class="w-3 h-3 ic"><use href="#i-check"/></svg>
+                  </span>
+                  <span>Retargeting saisonnier (mariages, fêtes, rentrée, fête des mères)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-[#B89047]/30 text-[#B89047] flex items-center justify-center flex-none mt-0.5">
+                    <svg class="w-3 h-3 ic"><use href="#i-check"/></svg>
+                  </span>
+                  <span>Maintenance, optimisation continue et mises à jour du site web</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-[#B89047]/30 text-[#B89047] flex items-center justify-center flex-none mt-0.5">
+                    <svg class="w-3 h-3 ic"><use href="#i-check"/></svg>
+                  </span>
+                  <span>Rapport mensuel détaillé &amp; recommandations stratégiques</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between py-4 border-t border-[#3A3128] text-sm mb-6">
+                <span class="font-medium text-[#BAAC97]">Total sur 6 mois</span>
+                <span class="font-serif text-2xl font-bold text-[#B89047]">3'300 CHF</span>
+              </div>
+
+              <a href="https://wa.me/41766606026?text=Bonjour,%20je%20souhaite%20valider%20l'Option%20B%20(Croissance%206%20mois)%20pour%2011%20Secrets" target="_blank" rel="noopener noreferrer" class="btn-luxury btn-gold w-full">
+                <span class="btn-bg"></span>
+                <span class="btn-txt">
+                  <span>Choisir l'Option B — Recommandée</span>
+                  <svg class="w-4 h-4 ic"><use href="#i-arrow-right"/></svg>
+                </span>
+              </a>
+              <p class="text-center text-xs text-[#BAAC97]/80 mt-3">Facturation mensuelle · Rentabilité maximale garantie</p>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="text-center text-sm text-[#6E6356] mt-12 max-w-xl mx-auto" data-gsap="fade-up">
+          Facturation mensuelle sans engagement après la période choisie. Le budget d'achat média est géré en direct — voir le détail de transparence ci-dessous.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ============================ 05 · TRANSPARENCE BUDGÉTAIRE ============================ -->
+    <section id="transparence" class="py-20 sm:py-28 bg-[#FCF9F3]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        
+        <div class="p-8 sm:p-12 lg:p-16 rounded-3xl bg-[#F7F2E8] border border-[#E4D9C7] relative" data-gsap="fade-up">
+          
+          <div class="flex items-center gap-3 mb-4">
+            <span class="font-serif italic text-2xl text-[#7C5F41] font-semibold">05</span>
+            <span class="w-12 h-[1px] bg-[#7C5F41]/40" data-line-reveal></span>
+            <span class="text-xs font-bold tracking-widest uppercase text-[#6E6356]">Transparence Totale</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1C1611] leading-tight mb-8">
+            Chaque franc investi, sous votre contrôle direct.
+          </h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-7">
+              <p class="text-base text-[#1C1611]/85 leading-relaxed mb-6">
+                Nos honoraires d'agence rémunèrent l'élaboration de la stratégie, la création des visuels publicitaires, la rédaction et l'optimisation quotidienne.
+              </p>
+              <p class="text-base text-[#1C1611]/85 leading-relaxed">
+                Le budget d'affichage publicitaire recommandé (<strong>entre 250 et 400 CHF / mois</strong>) est débité <strong>directement par Google &amp; Meta</strong> depuis la carte de crédit de votre salon. Il n'y a aucun intermédiaire financier, ni aucune commission cachée.
+              </p>
+            </div>
+
+            <div class="lg:col-span-5 space-y-4 border-t lg:border-t-0 lg:border-l border-[#E4D9C7] pt-6 lg:pt-0 lg:pl-8">
+              <div class="flex items-center gap-3 text-sm font-semibold text-[#1C1611]">
+                <svg class="w-5 h-5 text-[#7C5F41] ic"><use href="#i-shield"/></svg>
+                <span>Paiement direct aux régies publicitaires</span>
+              </div>
+              <div class="flex items-center gap-3 text-sm font-semibold text-[#1C1611]">
+                <svg class="w-5 h-5 text-[#7C5F41] ic"><use href="#i-calendar"/></svg>
+                <span>Budget modulable à tout moment selon votre affluence</span>
+              </div>
+              <div class="flex items-center gap-3 text-sm font-semibold text-[#1C1611]">
+                <svg class="w-5 h-5 text-[#7C5F41] ic"><use href="#i-sparkles"/></svg>
+                <span>Rapports de rentabilité transparents chaque mois</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Budget Visualization Bar -->
+          <div class="mt-10 pt-8 border-t border-[#E4D9C7]">
+            <p class="text-xs font-bold uppercase tracking-widest text-[#6E6356] mb-3">Exemple de répartition mensuelle (Formule B) :</p>
+            
+            <div class="h-14 rounded-2xl overflow-hidden flex border border-[#E4D9C7] shadow-inner text-xs sm:text-sm font-bold">
+              <div class="w-[60%] bg-[#1C1611] text-[#FCF9F3] flex items-center justify-center px-3 text-center">
+                Prestation Stratégie &amp; Gestion : 550 CHF
+              </div>
+              <div class="w-[40%] bg-[#B89047] text-[#1C1611] flex items-center justify-center px-3 text-center">
+                Budget Ads : 250 – 400 CHF
+              </div>
+            </div>
+
+            <div class="flex flex-wrap justify-between items-center text-xs font-semibold text-[#6E6356] mt-3">
+              <span>Investissement total estimé : ~800 à 950 CHF / mois tout compris</span>
+              <span>Propriété intégrale de vos comptes et données</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================ CTA FINAL ============================ -->
+    <section id="contact" class="py-20 sm:py-28 bg-[#1C1611] text-[#FCF9F3] text-center relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 relative z-10" data-gsap="fade-up">
+        
+        <span class="w-16 h-[2px] bg-[#B89047] mx-auto block mb-8" data-line-reveal></span>
+
+        <p class="text-xs font-bold uppercase tracking-widest text-[#B89047] mb-3">Prochaine Étape</p>
+        
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight text-[#FCF9F3] mb-6">
+          Prête à dynamiser l'agenda de <em class="text-[#B89047] not-italic">votre salon ?</em>
+        </h2>
+
+        <p class="text-base sm:text-lg text-[#BAAC97] leading-relaxed max-w-2xl mx-auto mb-10">
+          Un simple message suffit pour valider la formule souhaitée ou échanger sur vos questions spécifiques. Nous vous répondons sous 24h et le lancement technique s'effectue sous 5 jours ouvrés.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+          <a href="https://wa.me/41766606026?text=Bonjour,%20j'aimerais%20valider%20la%20proposition%20de%20campagne%20pour%2011%20Secrets" target="_blank" rel="noopener noreferrer" class="btn-luxury btn-gold w-full sm:w-auto">
+            <span class="btn-bg"></span>
+            <span class="btn-txt">
+              <svg class="w-4 h-4 ic-fill"><use href="#i-whatsapp"/></svg>
+              <span>Valider sur WhatsApp</span>
+            </span>
+          </a>
+
+          <a href="tel:+41766606026" class="btn-luxury btn-outline-light w-full sm:w-auto">
+            <span class="btn-bg"></span>
+            <span class="btn-txt">
+              <svg class="w-4 h-4 ic"><use href="#i-phone"/></svg>
+              <span>Appeler le 076 660 60 26</span>
+            </span>
+          </a>
+        </div>
+
+        <p class="text-xs text-[#BAAC97]/70 mt-8 tracking-wide">
+          Réponse rapide sous 24h · Mise en ligne sous 5 jours ouvrés
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="bg-[#15100C] text-[#BAAC97] py-10 border-t border-[#2A221A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <p class="font-serif text-sm italic text-[#FCF9F3]/90">
+        11 Secrets de Beauté — Proposition Stratégique Confidentielle
+      </p>
+      <div class="flex items-center gap-6">
+        <span>Lausanne &amp; Renens (Vaud)</span>
+        <span>© 2025 Tous droits réservés</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Logic -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
