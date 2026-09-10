@@ -284,7 +284,7 @@ body {
 }
 
 .panel-inner {
-  padding: 7.5mm 6.5mm 6.5mm;
+  padding: 7.2mm 6.5mm 6.5mm;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -292,9 +292,12 @@ body {
   z-index: 2;
 }
 
-/* Le secret du design plein : distribution équilibrée de haut en bas */
+/* Distribution équilibrée : flux continu avec espacement resserré entre sections */
 .panel-spread {
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6px;
 }
 
 /* VOLET 1 : RABATTABLE INTÉRIEUR (Abonnements, Cadeaux, Journées Spéciales) */
@@ -561,10 +564,11 @@ body {
   background: #FAF9F6;
   border: 1px dashed rgba(197, 168, 128, 0.6);
   border-radius: 5px;
-  padding: 6px 10px;
+  padding: 8px 10px;
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-top: auto;
 }
 
 .v-icon {
@@ -659,7 +663,7 @@ body {
 
 .back-salon-img {
   width: 100%;
-  height: 54px;
+  height: 65px;
   border-radius: 4px;
   overflow: hidden;
   border: 1px solid rgba(0,0,0,0.08);
@@ -691,7 +695,7 @@ body {
   background: #FCFCFA;
   border: 1px solid rgba(13, 92, 84, 0.1);
   border-radius: 5px;
-  padding: 5px 9px;
+  padding: 7px 10px;
   text-align: left;
 }
 
@@ -711,13 +715,13 @@ body {
 .hours-grid {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 2.5px;
 }
 
 .h-row {
   display: flex;
   justify-content: space-between;
-  font-size: 8px;
+  font-size: 8.2px;
   color: var(--c-text-main);
 }
 
@@ -735,7 +739,7 @@ body {
   text-align: left;
   background: var(--c-emerald-soft);
   border-radius: 5px;
-  padding: 7px 9px;
+  padding: 9px 10px;
 }
 
 .contact-line {
@@ -990,6 +994,7 @@ body {
 .menu-section {
   display: flex;
   flex-direction: column;
+  margin-bottom: 0px;
 }
 
 .menu-header {
@@ -1003,7 +1008,7 @@ body {
 
 .menu-title {
   font-family: var(--font-serif);
-  font-size: 14.5px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--c-emerald-dark);
   text-transform: uppercase;
@@ -1012,7 +1017,7 @@ body {
 }
 
 .menu-tagline {
-  font-size: 7.5px;
+  font-size: 7.8px;
   font-style: italic;
   color: var(--c-gold-dark);
 }
@@ -1042,17 +1047,17 @@ body {
 .expanded-table .table-row {
   display: flex;
   align-items: center;
-  padding: 3.2px 2px;
-  font-size: 8.8px;
-  border-bottom: 1px solid rgba(0,0,0,0.035);
+  padding: 9.4px 2px;
+  font-size: 9.7px;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 
 .expanded-table-forfaits .table-row {
   display: flex;
   align-items: center;
-  padding: 2.3px 2px;
-  font-size: 8.2px;
-  border-bottom: 1px solid rgba(0,0,0,0.035);
+  padding: 7.2px 2px;
+  font-size: 9.1px;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 
 .table-row:nth-child(even) {
@@ -1067,12 +1072,12 @@ body {
 .table-row.highlight-gold {
   background: rgba(197, 168, 128, 0.14);
   border-left: 2px solid var(--c-gold);
-  padding-left: 3px;
+  padding-left: 4px;
   font-weight: 600;
 }
 
 .child-row {
-  font-size: 8px;
+  font-size: 8.5px;
 }
 
 .item-name {
@@ -1085,7 +1090,7 @@ body {
 }
 
 .item-name small {
-  font-size: 7.5px;
+  font-size: 7.8px;
   color: var(--c-text-muted);
   font-weight: normal;
 }
@@ -1094,38 +1099,83 @@ body {
   width: 27px;
   text-align: right;
   font-family: var(--font-sans);
-  font-size: 8.8px;
+  font-size: 9.2px;
   font-weight: 700;
   color: var(--c-emerald-dark);
   font-variant-numeric: tabular-nums;
 }
 
-/* DOTTED LISTS (EXPANDED TO OCCUPY HEIGHT) */
+/* DOTTED LISTS — DISTRIBUTIONS HOMOGÈNES REMPLISSANT 100% DE LA HAUTEUR */
 .dotted-list {
   display: flex;
   flex-direction: column;
 }
 
+/* Panel 4 : Épilation (14 items) & Regard (6 items) */
+.dotted-balanced .dot-item {
+  display: flex;
+  align-items: baseline;
+  font-size: 9.8px;
+  padding: 8.6px 0;
+}
+
+/* Panel 5 : Visage Haute Précision (16 items structurés en 2 sections) */
+.dotted-visage .dot-item {
+  display: flex;
+  align-items: baseline;
+  font-size: 9.8px;
+  padding: 10.2px 0;
+}
+
+/* Panel 6 : Corps, Technologies & Afterwork (13 items) */
+.dotted-corps .dot-item {
+  display: flex;
+  align-items: baseline;
+  font-size: 10px;
+  padding: 12.0px 0;
+}
+
 .expanded-dotted .dot-item {
   display: flex;
   align-items: baseline;
-  font-size: 8.8px;
-  padding: 3.2px 0;
+  font-size: 9.9px;
+  padding: 10.6px 0;
+}
+
+.generous-dotted .dot-item {
+  display: flex;
+  align-items: baseline;
+  font-size: 10px;
+  padding: 11.5px 0;
+}
+
+/* Structure pour le nom + description en colonne */
+.d-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 78%;
+}
+
+.d-desc {
+  font-size: 7.6px;
+  color: var(--c-text-muted);
+  line-height: 1.25;
+  margin-top: 1px;
 }
 
 .dot-item.highlight-row {
   background: rgba(13, 92, 84, 0.04);
-  padding-left: 3px;
-  padding-right: 3px;
+  padding-left: 4px;
+  padding-right: 4px;
   border-radius: 2px;
   font-weight: 600;
 }
 
 .dot-item.highlight-gold {
-  background: rgba(197, 168, 128, 0.12);
+  background: rgba(197, 168, 128, 0.14);
   border-left: 2px solid var(--c-gold);
-  padding-left: 4px;
-  padding-right: 3px;
+  padding-left: 5px;
+  padding-right: 4px;
   border-radius: 2px;
   font-weight: 600;
 }
@@ -1136,7 +1186,7 @@ body {
 }
 
 .d-name small {
-  font-size: 7.5px;
+  font-size: 7.8px;
   color: var(--c-text-muted);
 }
 
@@ -1154,11 +1204,11 @@ body {
   font-family: var(--font-sans);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .d-price-quote {
-  font-size: 8px;
+  font-size: 8.8px;
   font-weight: 600;
   font-style: italic;
   color: var(--c-gold-dark);
@@ -1169,7 +1219,8 @@ body {
   background: linear-gradient(135deg, var(--c-emerald-dark) 0%, var(--c-emerald) 100%);
   color: #FFFFFF;
   border-radius: 5px;
-  padding: 7px 10px;
+  padding: 5px 9px;
+  margin: 1px 0;
   box-shadow: 0 2px 8px rgba(7, 59, 54, 0.25);
   border: 1px solid rgba(197, 168, 128, 0.35);
 }
@@ -1178,7 +1229,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .lis-header h4 {
@@ -1229,19 +1280,20 @@ body {
   color: var(--c-gold-soft);
 }
 
-/* LUXURY HIGHLIGHT CARD (COMBLER LE BAS DES VOLETS INTÉRIEURS) */
+/* LUXURY HIGHLIGHT CARD (ANCRAGE ÉLÉGANT EN BAS DES VOLETS INTÉRIEURS) */
 .luxury-highlight-card {
   background: #FAF9F6;
   border: 1px solid rgba(197, 168, 128, 0.4);
   border-radius: 5px;
-  padding: 6px 9px;
+  padding: 8px 11px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  margin-top: auto;
 }
 
 .lhc-icon {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .lhc-body {
@@ -1251,14 +1303,14 @@ body {
 }
 
 .lhc-body strong {
-  font-size: 8.8px;
+  font-size: 9.2px;
   color: var(--c-emerald-dark);
 }
 
 .lhc-body span {
-  font-size: 7.5px;
+  font-size: 7.8px;
   color: var(--c-text-muted);
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 /* SUPPLEMENTS CARD */
@@ -1266,10 +1318,11 @@ body {
   background: var(--c-gold-soft);
   border: 1px solid rgba(197, 168, 128, 0.45);
   border-radius: 5px;
-  padding: 6px 9px;
+  padding: 7px 11px;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 3.5px;
+  margin-top: auto;
 }
 
 .supp-head {
