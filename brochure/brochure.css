@@ -1,0 +1,1231 @@
+/* ==========================================================================
+   11 SECRETS DE BEAUTÉ — STUDIO D'IMPRESSION TRÍPTICO A4
+   Finition Haute Joaillerie & Coiffure de Luxe • Format 297mm x 210mm
+   ========================================================================== */
+
+:root {
+  --c-emerald-dark: #073B36;
+  --c-emerald: #0D5C54;
+  --c-emerald-light: #167C72;
+  --c-emerald-soft: #EBF4F2;
+  --c-gold: #C5A880;
+  --c-gold-dark: #9A7B52;
+  --c-gold-soft: #FAF4EC;
+  --c-text-main: #1C2422;
+  --c-text-muted: #576562;
+  --c-border-subtle: #E8E5DF;
+  --c-bg-paper: #FFFFFF;
+  --c-bg-warm: #FAF9F6;
+  --font-script: 'Alex Brush', cursive;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Montserrat', sans-serif;
+}
+
+/* RESET & BASE */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #181C1B;
+  color: var(--c-text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   STUDIO CONTROL BAR (NON IMPRIMABLE)
+   ========================================================================== */
+.studio-bar {
+  background: #0D1311;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.studio-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.back-link {
+  color: var(--c-gold);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+.back-link:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #FFFFFF;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #25D366;
+}
+
+.studio-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pill-switch, .view-switch {
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pill-btn, .tab-btn {
+  background: transparent;
+  border: none;
+  color: #B5C0BD;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-sans);
+}
+
+.pill-btn.active, .tab-btn.active {
+  background: var(--c-emerald);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(13, 92, 84, 0.5);
+}
+
+.pill-btn:hover:not(.active), .tab-btn:hover:not(.active) {
+  color: #FFFFFF;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #C7D2D0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.print-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #C5A880, #A68759);
+  color: #07221F;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(197, 168, 128, 0.35);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.print-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(197, 168, 128, 0.5);
+}
+
+.print-btn:active {
+  transform: translateY(0);
+}
+
+/* SPECS BAR */
+.specs-bar {
+  background: #121816;
+  color: #8D9C98;
+  font-size: 12px;
+  padding: 8px 24px;
+  display: flex;
+  gap: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  justify-content: center;
+}
+
+.spec-item strong {
+  color: #E2E8E6;
+}
+
+/* ==========================================================================
+   CANVAS CONTAINER & DOCUMENT STRUCTURING
+   ========================================================================== */
+.canvas-container {
+  padding: 40px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.brochure-doc {
+  display: none;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.brochure-doc.active {
+  display: flex;
+}
+
+/* ==========================================================================
+   THE A4 PRINT SHEET (297mm × 210mm)
+   ========================================================================== */
+.brochure-sheet {
+  width: 297mm;
+  height: 210mm;
+  background: var(--c-bg-paper);
+  position: relative;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+}
+
+/* FOLD GUIDES */
+.fold-guides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+  display: block;
+}
+
+.body-hide-guides .fold-guides {
+  display: none !important;
+}
+
+.fold-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  border-left: 1px dashed rgba(197, 168, 128, 0.6);
+}
+
+.fold-line::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--c-gold-dark);
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1px 3px;
+  border-radius: 2px;
+}
+
+/* Face Extérieure : 97mm | 100mm | 100mm */
+.sheet-exterior .fold-1 { left: 97mm; }
+.sheet-exterior .fold-2 { left: 197mm; }
+
+/* Face Intérieure : 100mm | 100mm | 97mm (ou 99/99/99) */
+.sheet-interior .fold-1 { left: 100mm; }
+.sheet-interior .fold-2 { left: 200mm; }
+
+/* GRID LAYOUT */
+.sheet-grid {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.sheet-exterior .panel-flap { width: 97mm; }
+.sheet-exterior .panel-back { width: 100mm; }
+.sheet-exterior .panel-cover { width: 100mm; }
+
+.sheet-interior .panel:nth-child(1) { width: 100mm; }
+.sheet-interior .panel:nth-child(2) { width: 100mm; }
+.sheet-interior .panel:nth-child(3) { width: 97mm; }
+
+/* ==========================================================================
+   PANEL STYLES & LUXURY FINISHING
+   ========================================================================== */
+.panel {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-inner {
+  padding: 8mm 7mm 7mm;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+/* VOLET 1 : RABATTABLE INTÉRIEUR (Abonnements, Cadeaux, Journées Spéciales) */
+.panel-flap {
+  background: #FCFCFA;
+  border-right: 1px solid rgba(13, 92, 84, 0.08);
+}
+
+.panel-header-minimal {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.panel-header-minimal .eyebrow {
+  font-size: 8.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--c-gold-dark);
+  display: block;
+}
+
+.panel-title {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--c-emerald-dark);
+  letter-spacing: 0.3px;
+}
+
+.title-leaf {
+  width: 32px;
+  height: 1.5px;
+  background: var(--c-gold);
+  margin: 4px auto 0;
+}
+
+/* LUXURY CARDS */
+.luxury-card {
+  background: #FFFFFF;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  position: relative;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.card-gold {
+  border: 1px solid rgba(197, 168, 128, 0.4);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F4 100%);
+}
+
+.card-badge {
+  display: inline-block;
+  font-size: 7.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: var(--c-gold);
+  color: #FFFFFF;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-bottom: 3px;
+}
+
+.card-badge-muted {
+  display: inline-block;
+  font-size: 7.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: var(--c-emerald-soft);
+  color: var(--c-emerald);
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-bottom: 3px;
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--c-emerald-dark);
+}
+
+.card-sub {
+  font-size: 9px;
+  color: var(--c-text-muted);
+  margin-top: 1px;
+}
+
+.card-desc {
+  font-size: 8.5px;
+  color: var(--c-text-muted);
+  line-height: 1.35;
+  margin-top: 2px;
+}
+
+.card-bonus {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+  font-size: 8px;
+  color: var(--c-emerald-dark);
+  font-weight: 600;
+}
+
+.bonus-tag {
+  background: #E5F3EE;
+  color: var(--c-emerald);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 7px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.card-price-row {
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.price-big {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--c-emerald);
+}
+
+.price-big small {
+  font-size: 10px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.price-simple {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--c-emerald);
+  text-align: right;
+  margin-top: 3px;
+}
+
+.price-simple small {
+  font-size: 9px;
+  font-family: var(--font-sans);
+}
+
+.card-validity {
+  font-size: 7.5px;
+  color: #8C9996;
+  text-align: right;
+  margin-top: 2px;
+}
+
+/* JOURNÉES SPÉCIALES BOX */
+.special-days-box {
+  background: #FFFFFF;
+  border: 1px solid rgba(13, 92, 84, 0.15);
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+}
+
+.box-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.box-head h4 {
+  font-family: var(--font-serif);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--c-emerald-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.star-icon {
+  color: var(--c-gold);
+  font-size: 9px;
+}
+
+.day-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px dotted rgba(0,0,0,0.08);
+}
+
+.day-item:last-of-type {
+  border-bottom: none;
+}
+
+.day-badge {
+  font-size: 7.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--c-emerald-dark);
+  color: #FFFFFF;
+  padding: 2px 5px;
+  border-radius: 3px;
+  width: 48px;
+  text-align: center;
+}
+
+.day-info {
+  flex: 1;
+  padding-left: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-title {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--c-text-main);
+}
+
+.day-serv {
+  font-size: 7.5px;
+  color: var(--c-text-muted);
+}
+
+.day-price {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.old-p {
+  font-size: 8px;
+  text-decoration: line-through;
+  color: #A4B0AD;
+  margin-right: 3px;
+}
+
+.new-p {
+  font-family: var(--font-serif);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--c-emerald);
+}
+
+.student-extra {
+  background: var(--c-gold-soft);
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-size: 7.5px;
+  color: var(--c-gold-dark);
+  text-align: center;
+  margin-top: 5px;
+}
+
+.panel-bottom-note {
+  margin-top: auto;
+  font-size: 7.5px;
+  font-style: italic;
+  text-align: center;
+  color: var(--c-text-muted);
+}
+
+/* ==========================================================================
+   VOLET 2 : DOS / CONTRE-COUVERTURE (Centre de la face externe)
+   ========================================================================== */
+.panel-back {
+  background: #FFFFFF;
+  border-right: 1px solid rgba(13, 92, 84, 0.08);
+  text-align: center;
+}
+
+.back-brand {
+  margin-bottom: 8px;
+}
+
+.brand-monogram {
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid var(--c-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 4px;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--c-emerald);
+}
+
+.back-logo {
+  font-family: var(--font-script);
+  font-size: 26px;
+  color: var(--c-emerald);
+  line-height: 1;
+}
+
+.back-tagline {
+  font-size: 7.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--c-gold-dark);
+  margin-top: 3px;
+}
+
+.back-pillars {
+  text-align: left;
+  background: #FAF9F6;
+  border: 1px solid rgba(197, 168, 128, 0.25);
+  border-radius: 5px;
+  padding: 6px 8px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pillar-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 8px;
+  font-weight: 500;
+  color: var(--c-text-main);
+}
+
+.p-check {
+  color: var(--c-emerald);
+  font-weight: 700;
+  font-size: 9px;
+}
+
+.back-salon-img {
+  width: 100%;
+  height: 48px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.back-salon-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.contact-block {
+  text-align: left;
+  background: var(--c-emerald-soft);
+  border-radius: 5px;
+  padding: 6px 8px;
+  margin-bottom: 6px;
+}
+
+.contact-title {
+  font-family: var(--font-serif);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--c-emerald-dark);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 8.5px;
+  color: var(--c-emerald-dark);
+  margin-bottom: 3px;
+}
+
+.contact-line svg {
+  stroke: var(--c-emerald);
+  flex-shrink: 0;
+}
+
+.contact-badge-walkin {
+  font-size: 7.5px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--c-gold-dark);
+  margin-top: 4px;
+}
+
+.qr-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: auto;
+  padding: 4px;
+}
+
+.qr-frame {
+  width: 42px;
+  height: 42px;
+  background: #FFFFFF;
+  padding: 2px;
+  border: 1px solid rgba(13, 92, 84, 0.2);
+  border-radius: 3px;
+}
+
+.qr-frame svg {
+  width: 100%;
+  height: 100%;
+}
+
+.qr-text {
+  text-align: left;
+  font-size: 8.5px;
+  font-weight: 700;
+  color: var(--c-emerald-dark);
+}
+
+.qr-text small {
+  display: block;
+  font-size: 7px;
+  font-weight: 400;
+  color: var(--c-text-muted);
+}
+
+/* ==========================================================================
+   VOLET 3 : COUVERTURE PRINCIPALE (Front Cover - Droite face externe)
+   ========================================================================== */
+.panel-cover {
+  background: #FFFFFF;
+  text-align: center;
+  position: relative;
+}
+
+.cover-bg-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 80% 20%, rgba(13, 92, 84, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cover-inner {
+  justify-content: space-between;
+}
+
+.cover-top-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ornament-line {
+  width: 25px;
+  height: 1px;
+  background: var(--c-gold);
+}
+
+.ornament-star {
+  color: var(--c-gold);
+  font-size: 10px;
+}
+
+.cover-brand {
+  margin-top: 2px;
+}
+
+.cover-sub-brand {
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--c-gold-dark);
+}
+
+.cover-main-title {
+  font-family: var(--font-script);
+  font-size: 38px;
+  color: var(--c-emerald);
+  line-height: 1.05;
+  margin-top: 2px;
+}
+
+.cover-tagline {
+  font-family: var(--font-serif);
+  font-size: 10.5px;
+  font-style: italic;
+  color: var(--c-text-muted);
+  letter-spacing: 0.5px;
+}
+
+/* COVER PHOTO */
+.cover-image-container {
+  width: 72mm;
+  height: 72mm;
+  margin: 4px auto;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  border: 1px solid rgba(197, 168, 128, 0.4);
+}
+
+.cover-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-title-badge {
+  background: var(--c-bg-warm);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  border-radius: 5px;
+  padding: 7px 10px;
+  margin: 2px 0;
+}
+
+.card-eyebrow {
+  font-size: 7.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--c-gold-dark);
+  display: block;
+}
+
+.card-main-heading {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--c-emerald-dark);
+  letter-spacing: 1px;
+}
+
+.card-sep {
+  width: 24px;
+  height: 1px;
+  background: var(--c-gold);
+  margin: 3px auto;
+}
+
+.card-sub-heading {
+  font-size: 8px;
+  color: var(--c-text-muted);
+}
+
+.cover-features-list {
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--c-emerald);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cover-features-list .dot {
+  color: var(--c-gold);
+}
+
+.cover-bottom-bar {
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding-top: 4px;
+  font-size: 8px;
+  color: var(--c-text-muted);
+}
+
+.cover-bottom-bar .phone-highlight {
+  font-weight: 700;
+  color: var(--c-emerald-dark);
+  font-size: 9px;
+  margin-top: 1px;
+}
+
+/* ==========================================================================
+   FACE INTÉRIEURE (MENU DES TARIFS & FORFAITS)
+   ========================================================================== */
+.sheet-interior .panel-menu {
+  background: #FFFFFF;
+  border-right: 1px solid rgba(13, 92, 84, 0.08);
+}
+
+.sheet-interior .panel-menu:last-child {
+  border-right: none;
+}
+
+.menu-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.mt-small { margin-top: 7px; }
+.mt-xs { margin-top: 4px; }
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1.5px solid var(--c-emerald);
+  padding-bottom: 2px;
+  margin-bottom: 4px;
+}
+
+.menu-title {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--c-emerald-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.menu-tagline {
+  font-size: 7px;
+  font-style: italic;
+  color: var(--c-gold-dark);
+}
+
+.table-legend {
+  display: flex;
+  gap: 8px;
+  font-size: 7.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--c-gold-dark);
+  letter-spacing: 0.5px;
+}
+
+.table-legend span {
+  width: 26px;
+  text-align: right;
+}
+
+/* PRICE TABLES */
+.price-table {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-row {
+  display: flex;
+  align-items: center;
+  padding: 2.2px 2px;
+  font-size: 8px;
+  border-bottom: 1px solid rgba(0,0,0,0.035);
+}
+
+.table-row:nth-child(even) {
+  background: rgba(248, 247, 244, 0.6);
+}
+
+.table-row.highlight-row {
+  background: rgba(13, 92, 84, 0.04);
+  font-weight: 600;
+}
+
+.table-row.highlight-gold {
+  background: rgba(197, 168, 128, 0.12);
+  border-left: 2px solid var(--c-gold);
+  padding-left: 3px;
+  font-weight: 600;
+}
+
+.child-row {
+  font-size: 7.5px;
+}
+
+.item-name {
+  flex: 1;
+  color: var(--c-text-main);
+  padding-right: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-name small {
+  font-size: 7px;
+  color: var(--c-text-muted);
+  font-weight: normal;
+}
+
+.p-col {
+  width: 26px;
+  text-align: right;
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--c-emerald-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+/* DOTTED LISTS (DOT LEADERS) */
+.dotted-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dot-item {
+  display: flex;
+  align-items: baseline;
+  font-size: 8px;
+  padding: 1.8px 0;
+}
+
+.d-name {
+  color: var(--c-text-main);
+  white-space: nowrap;
+}
+
+.d-name small {
+  font-size: 7px;
+  color: var(--c-text-muted);
+}
+
+.d-line {
+  flex: 1;
+  border-bottom: 1px dotted #CCD5D3;
+  margin: 0 4px;
+  position: relative;
+  top: -2px;
+}
+
+.d-price {
+  font-weight: 700;
+  color: var(--c-emerald-dark);
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.d-price-quote {
+  font-size: 7.5px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--c-gold-dark);
+}
+
+/* COMPACT TABLE */
+.compact-table .table-row {
+  padding: 1.8px 2px;
+  font-size: 7.8px;
+}
+
+/* LISSAGE + BOTOX BANNER */
+.lissage-banner {
+  background: linear-gradient(135deg, var(--c-emerald-dark) 0%, var(--c-emerald) 100%);
+  color: #FFFFFF;
+  border-radius: 4px;
+  padding: 5px 8px;
+  margin: 5px 0;
+  box-shadow: 0 2px 6px rgba(7, 59, 54, 0.2);
+}
+
+.lis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.lis-header h4 {
+  font-family: var(--font-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.lis-tag {
+  background: var(--c-gold);
+  color: #07221F;
+  font-size: 6.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.lis-prices {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lp-item {
+  text-align: center;
+  font-size: 7px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lp-item span {
+  opacity: 0.85;
+}
+
+.lp-item strong {
+  font-size: 10px;
+  color: var(--c-gold-soft);
+}
+
+/* SUPPLÉMENTS BOX */
+.supplements-box {
+  background: var(--c-gold-soft);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+  border-radius: 4px;
+  padding: 4px 6px;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.supp-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 7.5px;
+  color: var(--c-gold-dark);
+}
+
+.supp-item strong {
+  color: var(--c-emerald-dark);
+  font-weight: 700;
+}
+
+/* ESTHÉTIQUE SPECIFIC ELEMENTS */
+.cure-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.cure-item {
+  background: #FFFFFF;
+  border: 1px solid rgba(13, 92, 84, 0.1);
+  border-radius: 3px;
+  padding: 3px 5px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 7.5px;
+}
+
+.cure-item strong {
+  color: var(--c-emerald);
+}
+
+.pack-sub {
+  font-size: 7.5px;
+  color: var(--c-text-muted);
+  text-align: center;
+}
+
+.cure-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.cl-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  border-bottom: 1px dotted rgba(0,0,0,0.08);
+  padding-bottom: 2px;
+}
+
+.cl-row strong {
+  color: var(--c-emerald-dark);
+}
+
+/* ==========================================================================
+   PRINT STYLES (@media print) — PIXEL PERFECT 300 DPI A4 LANDSCAPE
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  html, body {
+    width: 297mm;
+    height: 210mm;
+    background: #FFFFFF !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print, .studio-bar, .specs-bar {
+    display: none !important;
+  }
+
+  .canvas-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+  }
+
+  .brochure-doc {
+    display: block !important;
+    gap: 0 !important;
+  }
+
+  .brochure-sheet {
+    width: 297mm !important;
+    height: 210mm !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  /* Cache les guides de pliage lors de l'impression réelle */
+  .fold-guides {
+    display: none !important;
+  }
+}

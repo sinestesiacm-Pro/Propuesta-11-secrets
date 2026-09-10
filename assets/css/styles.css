@@ -190,30 +190,6 @@ body {
   border-color: var(--ivory);
 }
 
-/* Floating WhatsApp badge for mobile */
-.floating-wa {
-  position: fixed;
-  bottom: 24px;
-  right: 20px;
-  z-index: 90;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #25D366;
-  color: #ffffff;
-  padding: 14px 20px;
-  border-radius: 9999px;
-  font-size: 14px;
-  font-weight: 700;
-  box-shadow: 0 14px 35px -10px rgba(37, 211, 102, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s var(--ease), box-shadow 0.3s;
-}
-
-.floating-wa:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 18px 40px -8px rgba(37, 211, 102, 0.7);
-}
-
 /* Rotating Seal */
 .seal-svg {
   animation: sealSpin 24s linear infinite;

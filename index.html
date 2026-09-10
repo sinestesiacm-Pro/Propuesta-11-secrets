@@ -80,12 +80,6 @@
   <!-- Progress Bar Top -->
   <div class="progress-bar" id="progressBar"></div>
 
-  <!-- Floating WhatsApp Action Button for Thumb Access -->
-  <a href="https://wa.me/41766606026?text=Bonjour,%20j'aimerais%20valider%20la%20proposition%20de%20campagne%20pour%2011%20Secrets" target="_blank" rel="noopener noreferrer" class="floating-wa" aria-label="Discuter sur WhatsApp">
-    <svg class="w-5 h-5 ic-fill" aria-hidden="true"><use href="#i-whatsapp"/></svg>
-    <span class="hidden sm:inline">WhatsApp Direct</span>
-  </a>
-
   <!-- ============================ HEADER / NAVIGATION ============================ -->
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 flex items-center justify-between">
@@ -94,24 +88,22 @@
       </a>
 
       <!-- Desktop Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-[#1C1611]/85">
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-[#1C1611]/85">
         <a href="#vision" class="hover:text-[#B89047] transition-colors py-1">La Vision</a>
+        <a href="#salon" class="hover:text-[#B89047] transition-colors py-1">Le Salon</a>
         <a href="#services" class="hover:text-[#B89047] transition-colors py-1">Services</a>
-        <a href="#cadeau" class="hover:text-[#B89047] transition-colors py-1">Site Offert</a>
         <a href="#tarifs" class="hover:text-[#B89047] transition-colors py-1">Tarifs &amp; Plans</a>
-        <a href="#transparence" class="hover:text-[#B89047] transition-colors py-1">Transparence</a>
+        <a href="brochure/" target="_blank" class="inline-flex items-center gap-1.5 text-[#0D5C54] hover:text-[#073B36] font-bold transition-colors py-1 bg-[#EBF4F2] px-3 py-1 rounded-full text-xs">
+          <span>Dépliants Tríptico A4</span>
+          <svg class="w-3 h-3 ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
       </nav>
 
-      <!-- CTA Actions -->
+      <!-- CTA Action -->
       <div class="flex items-center gap-3">
-        <a href="tel:+41766606026" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-full border border-[#1C1611]/20 hover:bg-[#1C1611] hover:text-[#FCF9F3] transition-all">
-          <svg class="w-3.5 h-3.5 ic"><use href="#i-phone"/></svg>
-          <span>076 660 60 26</span>
-        </a>
-
-        <a href="https://wa.me/41766606026?text=Bonjour,%20j'aimerais%20valider%20la%20proposition%20de%20campagne%20pour%2011%20Secrets" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#1C1611] text-[#FCF9F3] px-4 py-2.5 rounded-full text-xs font-semibold hover:bg-[#7C5F41] transition-all shadow-sm">
-          <svg class="w-3.5 h-3.5 ic-fill"><use href="#i-whatsapp"/></svg>
-          <span>WhatsApp</span>
+        <a href="brochure/" target="_blank" class="inline-flex items-center gap-2 bg-[#0D5C54] text-[#FFFFFF] px-4 py-2.5 rounded-full text-xs font-semibold hover:bg-[#073B36] transition-all shadow-sm">
+          <span>Voir Dépliants Print</span>
+          <svg class="w-3.5 h-3.5 ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
 
         <!-- Mobile Menu Toggle Button -->
@@ -125,14 +117,17 @@
     <div id="mobileMenu" class="hidden md:hidden bg-[#FCF9F3] border-b border-[#E4D9C7] px-6 py-5 shadow-lg">
       <nav class="flex flex-col gap-4 text-base font-semibold text-[#1C1611]">
         <a href="#vision" class="py-2 border-b border-[#E4D9C7]/50">La Vision</a>
+        <a href="#salon" class="py-2 border-b border-[#E4D9C7]/50">Le Salon</a>
         <a href="#services" class="py-2 border-b border-[#E4D9C7]/50">Services &amp; Vitrines</a>
-        <a href="#cadeau" class="py-2 border-b border-[#E4D9C7]/50">Site Web Offert</a>
         <a href="#tarifs" class="py-2 border-b border-[#E4D9C7]/50">Tarifs &amp; Investissement</a>
-        <a href="#transparence" class="py-2 border-b border-[#E4D9C7]/50">Transparence Budgétaire</a>
-        <div class="pt-2 flex flex-col gap-3">
-          <a href="tel:+41766606026" class="flex items-center justify-center gap-2 py-3 rounded-xl border border-[#1C1611]/30 text-sm font-semibold">
-            <svg class="w-4 h-4 ic"><use href="#i-phone"/></svg>
-            Appeler (+41 76 660 60 26)
+        <a href="brochure/" target="_blank" class="py-2 border-b border-[#E4D9C7]/50 text-[#0D5C54] flex items-center justify-between font-bold">
+          <span>Dépliants Tríptico A4 Print</span>
+          <span class="text-xs bg-[#0D5C54] text-white px-2 py-0.5 rounded-full">PDF 300 DPI</span>
+        </a>
+        <div class="pt-2">
+          <a href="brochure/" target="_blank" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-[#0D5C54] text-[#FFFFFF] text-sm font-semibold">
+            <span>Ouvrir les Dépliants Print</span>
+            <svg class="w-4 h-4 ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
         </div>
       </nav>
@@ -149,7 +144,7 @@
           <div class="lg:col-span-7 flex flex-col items-start">
             <div class="hero-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFE7D8] text-[#7C5F41] text-xs font-bold tracking-widest uppercase mb-6">
               <span class="w-2 h-2 rounded-full bg-[#B89047] animate-pulse"></span>
-              Proposition Confidentielle · Lausanne &amp; Renens
+              Proposition Confidentielle pour Giulia · Lausanne &amp; Renens
             </div>
 
             <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight text-[#1C1611] leading-[1.08] mb-6">
@@ -159,23 +154,23 @@
             </h1>
 
             <p class="hero-desc text-base sm:text-lg text-[#6E6356] leading-relaxed max-w-xl mb-8">
-              Une présence publicitaire haute précision sur Instagram, Facebook et Google pour transformer les recherches locales en appels et rendez-vous WhatsApp confirmés dans votre salon.
+              Une stratégie publicitaire sur mesure sur Meta (Instagram &amp; Facebook), Google et TikTok pour attirer et fidéliser de nouvelles clientes à Lausanne et Renens.
             </p>
 
             <div class="hero-actions flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
-              <a href="#tarifs" class="btn-luxury btn-dark w-full sm:w-auto">
+              <a href="#vision" class="btn-luxury btn-dark w-full sm:w-auto">
                 <span class="btn-bg"></span>
                 <span class="btn-txt">
-                  <span>Consulter les offres</span>
+                  <span>Découvrir la stratégie</span>
                   <svg class="w-4 h-4 ic"><use href="#i-arrow-down"/></svg>
                 </span>
               </a>
 
-              <a href="https://wa.me/41766606026?text=Bonjour,%20j'aimerais%20valider%20la%20proposition%20de%20campagne%20pour%2011%20Secrets" target="_blank" rel="noopener noreferrer" class="btn-luxury btn-gold w-full sm:w-auto">
+              <a href="#tarifs" class="btn-luxury btn-outline-dark w-full sm:w-auto">
                 <span class="btn-bg"></span>
                 <span class="btn-txt">
-                  <svg class="w-4 h-4 ic-fill"><use href="#i-whatsapp"/></svg>
-                  <span>Échanger sur WhatsApp</span>
+                  <span>Consulter les tarifs</span>
+                  <svg class="w-4 h-4 ic"><use href="#i-arrow-right"/></svg>
                 </span>
               </a>
             </div>
@@ -641,9 +636,9 @@
               <div class="bg-[#FCF9F3] text-[#1C1611] rounded-2xl p-5 mt-2">
                 <div class="flex items-center justify-between pb-4 border-b border-[#E4D9C7]">
                   <span class="font-serif font-bold text-lg">11 Secrets <em>de Beauté</em></span>
-                  <a href="tel:+41766606026" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-[#1C1611] text-[#FCF9F3]">
-                    <svg class="w-3 h-3 ic"><use href="#i-phone"/></svg> Appeler
-                  </a>
+                  <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-[#1C1611] text-[#FCF9F3]">
+                    <svg class="w-3 h-3 ic"><use href="#i-phone"/></svg> Contact direct
+                  </span>
                 </div>
 
                 <div class="py-6 text-center">
@@ -652,12 +647,12 @@
                   <p class="text-xs text-[#6E6356] mt-2 max-w-xs mx-auto">Head Spa, onglerie raffinée, soins plasma &amp; perruques médicales à Renens.</p>
                   
                   <div class="mt-4 flex flex-wrap gap-2 justify-center">
-                    <a href="tel:+41766606026" class="px-4 py-2 rounded-lg bg-[#1C1611] text-[#FCF9F3] text-xs font-semibold inline-flex items-center gap-1.5">
-                      <svg class="w-3.5 h-3.5 ic"><use href="#i-phone"/></svg> 076 660 60 26
-                    </a>
-                    <a href="https://wa.me/41766606026?text=Bonjour,%20j'aimerais%20prendre%20rendez-vous%20au%20salon" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-[#25D366] text-white text-xs font-semibold inline-flex items-center gap-1.5">
-                      <svg class="w-3.5 h-3.5 ic-fill"><use href="#i-whatsapp"/></svg> WhatsApp
-                    </a>
+                    <span class="px-4 py-2 rounded-lg bg-[#1C1611] text-[#FCF9F3] text-xs font-semibold inline-flex items-center gap-1.5">
+                      <svg class="w-3.5 h-3.5 ic"><use href="#i-phone"/></svg> Appel en 1 clic
+                    </span>
+                    <span class="px-4 py-2 rounded-lg bg-[#25D366] text-white text-xs font-semibold inline-flex items-center gap-1.5">
+                      <svg class="w-3.5 h-3.5 ic-fill"><use href="#i-whatsapp"/></svg> WhatsApp direct
+                    </span>
                   </div>
                 </div>
 
@@ -692,10 +687,10 @@
             <span class="text-xs font-bold tracking-widest uppercase text-[#6E6356]">Investissement &amp; Formules</span>
           </div>
           <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#1C1611] leading-tight">
-            Deux options claires pour dynamiser votre salon.
+            Deux options claires pour votre accompagnement.
           </h2>
           <p class="mt-4 text-base text-[#6E6356]">
-            Des honoraires fixes, transparents et sans frais cachés pour attirer des clientes fidèles semaine après semaine.
+            Des honoraires fixes, transparents et sans engagement au-delà de la durée convenue.
           </p>
         </div>
 
@@ -761,13 +756,9 @@
                 <span class="font-serif text-2xl font-bold text-[#1C1611]">2'250 CHF</span>
               </div>
 
-              <a href="https://wa.me/41766606026?text=Bonjour,%20je%20souhaite%20valider%20l'Option%20A%20(Lancement%203%20mois)%20pour%2011%20Secrets" target="_blank" rel="noopener noreferrer" class="btn-luxury btn-outline-dark w-full">
-                <span class="btn-bg"></span>
-                <span class="btn-txt">
-                  <span>Choisir l'Option A</span>
-                  <svg class="w-4 h-4 ic"><use href="#i-arrow-right"/></svg>
-                </span>
-              </a>
+              <div class="w-full py-3.5 px-4 rounded-xl bg-[#EFE7D8] text-[#7C5F41] text-xs font-bold text-center uppercase tracking-wider">
+                Option A · Durée 3 mois
+              </div>
             </div>
           </article>
 
@@ -786,7 +777,7 @@
               </div>
 
               <h3 class="font-serif text-3xl font-semibold text-[#FCF9F3] mb-2">Croissance &amp; Fidélisation</h3>
-              <p class="text-sm text-[#BAAC97] mb-6">La solution la plus complète pour installer une autorité pérenne et fidéliser votre clientèle sur le long terme.</p>
+              <p class="text-sm text-[#BAAC97] mb-6">La solution la plus complète pour installer une visibilité pérenne et fidéliser votre clientèle sur le long terme.</p>
 
               <!-- Price with discount badge -->
               <div class="flex flex-wrap items-baseline gap-2 mb-8 pb-6 border-b border-[#3A3128]">
@@ -810,7 +801,7 @@
                   <span class="w-5 h-5 rounded-full bg-[#B89047]/30 text-[#B89047] flex items-center justify-center flex-none mt-0.5">
                     <svg class="w-3 h-3 ic"><use href="#i-check"/></svg>
                   </span>
-                  <span>Campagnes vidéo immersives <strong>TikTok Ads</strong></span>
+                  <span>Campagnes vidéo <strong>TikTok Ads</strong></span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="w-5 h-5 rounded-full bg-[#B89047]/30 text-[#B89047] flex items-center justify-center flex-none mt-0.5">
@@ -822,13 +813,13 @@
                   <span class="w-5 h-5 rounded-full bg-[#B89047]/30 text-[#B89047] flex items-center justify-center flex-none mt-0.5">
                     <svg class="w-3 h-3 ic"><use href="#i-check"/></svg>
                   </span>
-                  <span>Maintenance, optimisation continue et mises à jour du site web</span>
+                  <span>Maintenance et mises à jour continues du site vitrine</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <span class="w-5 h-5 rounded-full bg-[#B89047]/30 text-[#B89047] flex items-center justify-center flex-none mt-0.5">
                     <svg class="w-3 h-3 ic"><use href="#i-check"/></svg>
                   </span>
-                  <span>Rapport mensuel détaillé &amp; recommandations stratégiques</span>
+                  <span>Rapport mensuel clair de performance &amp; rentabilité</span>
                 </li>
               </ul>
             </div>
@@ -839,21 +830,16 @@
                 <span class="font-serif text-2xl font-bold text-[#B89047]">3'300 CHF</span>
               </div>
 
-              <a href="https://wa.me/41766606026?text=Bonjour,%20je%20souhaite%20valider%20l'Option%20B%20(Croissance%206%20mois)%20pour%2011%20Secrets" target="_blank" rel="noopener noreferrer" class="btn-luxury btn-gold w-full">
-                <span class="btn-bg"></span>
-                <span class="btn-txt">
-                  <span>Choisir l'Option B — Recommandée</span>
-                  <svg class="w-4 h-4 ic"><use href="#i-arrow-right"/></svg>
-                </span>
-              </a>
-              <p class="text-center text-xs text-[#BAAC97]/80 mt-3">Facturation mensuelle · Rentabilité maximale garantie</p>
+              <div class="w-full py-3.5 px-4 rounded-xl bg-[#B89047] text-[#1C1611] text-xs font-bold text-center uppercase tracking-wider shadow-md">
+                Option B · Formule Recommandée
+              </div>
             </div>
           </article>
 
         </div>
 
         <p class="text-center text-sm text-[#6E6356] mt-12 max-w-xl mx-auto" data-gsap="fade-up">
-          Facturation mensuelle sans engagement après la période choisie. Le budget d'achat média est géré en direct — voir le détail de transparence ci-dessous.
+          Facturation mensuelle sans engagement après la période choisie. Le budget d'achat média s'ajoute en direct — voir la section ci-dessous.
         </p>
 
       </div>
@@ -879,10 +865,10 @@
             
             <div class="lg:col-span-7">
               <p class="text-base text-[#1C1611]/85 leading-relaxed mb-6">
-                Nos honoraires d'agence rémunèrent l'élaboration de la stratégie, la création des visuels publicitaires, la rédaction et l'optimisation quotidienne.
+                Les honoraires couvrent la stratégie, la création des visuels publicitaires, la rédaction et l'optimisation continue de vos campagnes.
               </p>
               <p class="text-base text-[#1C1611]/85 leading-relaxed">
-                Le budget d'affichage publicitaire recommandé (<strong>entre 250 et 400 CHF / mois</strong>) est débité <strong>directement par Google &amp; Meta</strong> depuis la carte de crédit de votre salon. Il n'y a aucun intermédiaire financier, ni aucune commission cachée.
+                Le budget d'affichage publicitaire conseillé (<strong>entre 250 et 400 CHF / mois</strong>) est réglé <strong>directement aux régies (Google &amp; Meta)</strong> depuis la carte de crédit de votre salon. Vous conservez ainsi une transparence absolue, sans aucun intermédiaire.
               </p>
             </div>
 
@@ -893,11 +879,11 @@
               </div>
               <div class="flex items-center gap-3 text-sm font-semibold text-[#1C1611]">
                 <svg class="w-5 h-5 text-[#7C5F41] ic"><use href="#i-calendar"/></svg>
-                <span>Budget modulable à tout moment selon votre affluence</span>
+                <span>Budget ajustable selon vos disponibilités</span>
               </div>
               <div class="flex items-center gap-3 text-sm font-semibold text-[#1C1611]">
                 <svg class="w-5 h-5 text-[#7C5F41] ic"><use href="#i-sparkles"/></svg>
-                <span>Rapports de rentabilité transparents chaque mois</span>
+                <span>Rapports mensuels clairs et détaillés</span>
               </div>
             </div>
 
@@ -918,7 +904,7 @@
 
             <div class="flex flex-wrap justify-between items-center text-xs font-semibold text-[#6E6356] mt-3">
               <span>Investissement total estimé : ~800 à 950 CHF / mois tout compris</span>
-              <span>Propriété intégrale de vos comptes et données</span>
+              <span>Propriété intégrale de vos comptes publicitaires</span>
             </div>
           </div>
 
@@ -927,44 +913,29 @@
       </div>
     </section>
 
-    <!-- ============================ CTA FINAL ============================ -->
+    <!-- ============================ 06 · CONCLUSION & PROCHAINE ÉTAPE ============================ -->
     <section id="contact" class="py-20 sm:py-28 bg-[#1C1611] text-[#FCF9F3] text-center relative overflow-hidden">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 relative z-10" data-gsap="fade-up">
         
         <span class="w-16 h-[2px] bg-[#B89047] mx-auto block mb-8" data-line-reveal></span>
 
-        <p class="text-xs font-bold uppercase tracking-widest text-[#B89047] mb-3">Prochaine Étape</p>
+        <p class="text-xs font-bold uppercase tracking-widest text-[#B89047] mb-3">Synthèse de la Proposition</p>
         
         <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight text-[#FCF9F3] mb-6">
-          Prête à dynamiser l'agenda de <em class="text-[#B89047] not-italic">votre salon ?</em>
+          Une présence sur mesure pour <em class="text-[#B89047] not-italic">11 Secrets de Beauté</em>
         </h2>
 
         <p class="text-base sm:text-lg text-[#BAAC97] leading-relaxed max-w-2xl mx-auto mb-10">
-          Un simple message suffit pour valider la formule souhaitée ou échanger sur vos questions spécifiques. Nous vous répondons sous 24h et le lancement technique s'effectue sous 5 jours ouvrés.
+          Cette proposition a été conçue pour valoriser l'ensemble de vos prestations et attirer une clientèle qualifiée à Lausanne et Renens. Prenez le temps d'évaluer ces deux formules pour convenir ensemble de l'option la plus adaptée à vos objectifs.
         </p>
 
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-          <a href="https://wa.me/41766606026?text=Bonjour,%20j'aimerais%20valider%20la%20proposition%20de%20campagne%20pour%2011%20Secrets" target="_blank" rel="noopener noreferrer" class="btn-luxury btn-gold w-full sm:w-auto">
-            <span class="btn-bg"></span>
-            <span class="btn-txt">
-              <svg class="w-4 h-4 ic-fill"><use href="#i-whatsapp"/></svg>
-              <span>Valider sur WhatsApp</span>
-            </span>
-          </a>
-
-          <a href="tel:+41766606026" class="btn-luxury btn-outline-light w-full sm:w-auto">
-            <span class="btn-bg"></span>
-            <span class="btn-txt">
-              <svg class="w-4 h-4 ic"><use href="#i-phone"/></svg>
-              <span>Appeler le 076 660 60 26</span>
-            </span>
-          </a>
+        <div class="inline-flex flex-wrap items-center justify-center gap-4 p-5 rounded-2xl bg-[#282018] border border-[#B89047]/30 text-xs sm:text-sm text-[#FCF9F3]">
+          <span class="flex items-center gap-2"><svg class="w-4 h-4 text-[#B89047] ic"><use href="#i-check"/></svg> Démarrage possible sous 5 jours ouvrés</span>
+          <span class="text-[#B89047]">•</span>
+          <span class="flex items-center gap-2"><svg class="w-4 h-4 text-[#B89047] ic"><use href="#i-gift"/></svg> Site vitrine offert dès le lancement</span>
+          <span class="text-[#B89047]">•</span>
+          <span class="flex items-center gap-2"><svg class="w-4 h-4 text-[#B89047] ic"><use href="#i-shield"/></svg> Sans engagement au-delà de la formule</span>
         </div>
-
-        <p class="text-xs text-[#BAAC97]/70 mt-8 tracking-wide">
-          Réponse rapide sous 24h · Mise en ligne sous 5 jours ouvrés
-        </p>
 
       </div>
     </section>
@@ -974,11 +945,11 @@
   <footer class="bg-[#15100C] text-[#BAAC97] py-10 border-t border-[#2A221A]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
       <p class="font-serif text-sm italic text-[#FCF9F3]/90">
-        11 Secrets de Beauté — Proposition Stratégique Confidentielle
+        11 Secrets de Beauté — Proposition Commerciale &amp; Stratégie Digitale
       </p>
       <div class="flex items-center gap-6">
         <span>Lausanne &amp; Renens (Vaud)</span>
-        <span>© 2025 Tous droits réservés</span>
+        <span>Document confidentiel</span>
       </div>
     </div>
   </footer>
