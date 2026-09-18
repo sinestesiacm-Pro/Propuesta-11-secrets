@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11 Secrets de Beauté — Affiche Promotionnelle A4</title>
+  
+  <!-- Typographies Éditoriales de Luxe -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       RÈGLES D'IMPRESSION STRICTES (CSS PAGED MEDIA - A4 PORTRAIT 300 DPI)
+       ========================================================================== */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    :root {
+      /* Palette Éditoriale "11 Secrets de Beauté" */
+      --c-cream-bg: #FBF9F5;
+      --c-cream-card: #FFFFFF;
+      --c-cream-warm: #F4EFE6;
+      --c-forest-deep: #1E2D24;
+      --c-forest-dark: #141F18;
+      --c-forest-accent: #2A3E32;
+      --c-gold-primary: #C5A880;
+      --c-gold-dark: #A48356;
+      --c-gold-light: #EFE4D2;
+      --c-text-dark: #1A1A1A;
+      --c-text-muted: #5C6760;
+      --c-text-light: #FFFFFF;
+      
+      --font-display: 'Playfair Display', serif;
+      --font-title: 'Cinzel', serif;
+      --font-serif: 'Cormorant Garamond', serif;
+      --font-sans: 'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      background-color: #0E1310;
+      font-family: var(--font-sans);
+      color: var(--c-text-dark);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Barre d'actions & prévisualisation (Masquée à l'impression) */
+    .studio-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(14, 19, 16, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(197, 168, 128, 0.3);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #FFFFFF;
+    }
+
+    .studio-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-circle {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--c-gold-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-title);
+      font-size: 13px;
+      color: var(--c-gold-primary);
+    }
+
+    .studio-title {
+      font-family: var(--font-title);
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      color: #FFFFFF;
+    }
+
+    .studio-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-print {
+      background: linear-gradient(135deg, var(--c-gold-primary) 0%, var(--c-gold-dark) 100%);
+      color: #0E1310;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-family: var(--font-title);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(197, 168, 128, 0.35);
+      transition: all 0.2s ease;
+    }
+
+    .btn-print:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(197, 168, 128, 0.5);
+    }
+
+    .doc-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 20px;
+    }
+
+    /* ==========================================================================
+       FEUILLE A4 STRICTEMENT DIMENSIONNÉE (210mm x 297mm)
+       ========================================================================== */
+    .a4-page {
+      width: 210mm;
+      height: 297mm;
+      min-width: 210mm;
+      min-height: 297mm;
+      max-width: 210mm;
+      max-height: 297mm;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      background: var(--c-cream-bg);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+      page-break-after: always;
+      break-after: page;
+    }
+
+    /* Cadre intérieur de sécurité & passe-partout de luxe */
+    .page-frame {
+      width: 100%;
+      height: 100%;
+      padding: 14mm 14mm 12mm 14mm; /* Marges de sécurité anti-rogne d'imprimerie */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Double filet or d'encadrement éditorial */
+    .editorial-border {
+      position: absolute;
+      top: 8mm;
+      bottom: 8mm;
+      left: 8mm;
+      right: 8mm;
+      border: 1px solid rgba(197, 168, 128, 0.45);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .editorial-border::after {
+      content: '';
+      position: absolute;
+      top: 1.5mm;
+      bottom: 1.5mm;
+      left: 1.5mm;
+      right: 1.5mm;
+      border: 0.5px solid rgba(197, 168, 128, 0.25);
+    }
+
+    /* ==========================================================================
+       1. HEADER : TYPOGRAPHIE HAUTE HORLOGERIE & JOAILLERIE
+       ========================================================================== */
+    .poster-header {
+      text-align: center;
+      position: relative;
+      margin-bottom: 5mm;
+    }
+
+    .emblem-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 2.5mm;
+    }
+
+    .emblem-line {
+      width: 32px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--c-gold-primary));
+    }
+
+    .emblem-line.right {
+      background: linear-gradient(90deg, var(--c-gold-primary), transparent);
+    }
+
+    .emblem-icon {
+      color: var(--c-gold-dark);
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .main-brand-title {
+      font-family: var(--font-title);
+      font-size: 26pt;
+      font-weight: 500;
+      letter-spacing: 4px;
+      color: var(--c-forest-deep);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 2mm;
+    }
+
+    .sub-brand-tagline {
+      font-family: var(--font-title);
+      font-size: 8.5pt;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      color: var(--c-gold-dark);
+      text-transform: uppercase;
+      margin-bottom: 2.5mm;
+    }
+
+    .header-desc {
+      font-family: var(--font-serif);
+      font-size: 11pt;
+      font-style: italic;
+      color: var(--c-text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    /* ==========================================================================
+       2. GRID CENTRAL 2x2 ÉQUILIBRÉ & PROPORTIONS FIXES
+       ========================================================================== */
+    .services-grid-2x2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 5.5mm;
+      flex: 1;
+      margin: 2mm 0 4mm 0;
+    }
+
+    .service-card {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #EFECE6;
+      box-shadow: 0 4px 18px rgba(20, 31, 24, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border: 1px solid rgba(197, 168, 128, 0.35);
+    }
+
+    /* Conteneur d'image avec recadrage dynamique et profondeur */
+    .card-media {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    /* Dégradé de lisibilité en bas de photo */
+    .card-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg, 
+        rgba(20, 31, 24, 0.05) 0%, 
+        rgba(20, 31, 24, 0.15) 50%, 
+        rgba(20, 31, 24, 0.72) 100%
+      );
+      z-index: 2;
+    }
+
+    /* Pastille / Cartouche Typographique Flottante Éditoriale */
+    .card-caption-pill {
+      position: relative;
+      z-index: 3;
+      margin: 3.5mm;
+      padding: 3mm 3.5mm 3.5mm 3.5mm;
+      background: rgba(251, 249, 245, 0.94);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 3px;
+      border: 1px solid rgba(197, 168, 128, 0.6);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+      text-align: center;
+    }
+
+    .pill-number {
+      display: inline-block;
+      font-family: var(--font-title);
+      font-size: 6.5pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--c-gold-dark);
+      text-transform: uppercase;
+      margin-bottom: 1mm;
+    }
+
+    .pill-title {
+      font-family: var(--font-title);
+      font-size: 10.5pt;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      color: var(--c-forest-deep);
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .pill-subtitle {
+      font-family: var(--font-serif);
+      font-size: 9.5pt;
+      font-style: italic;
+      color: var(--c-text-muted);
+      margin-top: 1mm;
+      line-height: 1.2;
+    }
+
+    /* Petit filet or décoratif sous le titre */
+    .pill-divider {
+      width: 20px;
+      height: 1px;
+      background: var(--c-gold-primary);
+      margin: 1.5mm auto 1mm auto;
+    }
+
+    /* ==========================================================================
+       3. BANDEAU DE SYNTHÈSE / SOUS-TITRE INTERMÉDIAIRE
+       ========================================================================== */
+    .statement-strip {
+      text-align: center;
+      padding: 3mm 0;
+      border-top: 1px solid rgba(197, 168, 128, 0.3);
+      border-bottom: 1px solid rgba(197, 168, 128, 0.3);
+      margin-bottom: 3.5mm;
+    }
+
+    .statement-title {
+      font-family: var(--font-display);
+      font-size: 14pt;
+      font-weight: 600;
+      color: var(--c-forest-deep);
+      letter-spacing: 0.5px;
+    }
+
+    .statement-desc {
+      font-family: var(--font-serif);
+      font-size: 9.5pt;
+      font-style: italic;
+      color: var(--c-text-muted);
+      margin-top: 0.5mm;
+    }
+
+    /* ==========================================================================
+       4. FOOTER : COORDONNÉES CENTRÉES DE HAUTE PRÉCISION
+       ========================================================================== */
+    .poster-footer {
+      background: var(--c-forest-deep);
+      border-radius: 4px;
+      padding: 3.5mm 5mm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(20, 31, 24, 0.2);
+      border: 1px solid rgba(197, 168, 128, 0.4);
+    }
+
+    .footer-contacts {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-family: var(--font-sans);
+      font-size: 8pt;
+      font-weight: 500;
+      letter-spacing: 0.8px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #FFFFFF;
+    }
+
+    .contact-item .icon {
+      font-size: 9pt;
+      color: var(--c-gold-primary);
+    }
+
+    .footer-sep {
+      color: var(--c-gold-primary);
+      opacity: 0.6;
+    }
+
+    .footer-sub {
+      margin-top: 1.5mm;
+      font-family: var(--font-sans);
+      font-size: 7pt;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--c-gold-light);
+      opacity: 0.85;
+    }
+
+    /* ==========================================================================
+       VARIANTE 2 : ÉDITION "FORÊT NOIR & OR" (DARK LUXURY)
+       ========================================================================== */
+    .a4-page.theme-dark {
+      background: var(--c-forest-dark);
+      color: #FFFFFF;
+    }
+
+    .theme-dark .editorial-border {
+      border-color: rgba(197, 168, 128, 0.35);
+    }
+
+    .theme-dark .editorial-border::after {
+      border-color: rgba(197, 168, 128, 0.15);
+    }
+
+    .theme-dark .main-brand-title {
+      color: #FFFFFF;
+    }
+
+    .theme-dark .sub-brand-tagline {
+      color: var(--c-gold-primary);
+    }
+
+    .theme-dark .header-desc {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .theme-dark .card-caption-pill {
+      background: rgba(20, 31, 24, 0.92);
+      border-color: rgba(197, 168, 128, 0.45);
+    }
+
+    .theme-dark .pill-title {
+      color: #FFFFFF;
+    }
+
+    .theme-dark .pill-subtitle {
+      color: var(--c-gold-light);
+    }
+
+    .theme-dark .statement-strip {
+      border-color: rgba(197, 168, 128, 0.25);
+    }
+
+    .theme-dark .statement-title {
+      color: #FFFFFF;
+    }
+
+    .theme-dark .statement-desc {
+      color: var(--c-gold-light);
+    }
+
+    .theme-dark .poster-footer {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(197, 168, 128, 0.3);
+    }
+
+    /* ==========================================================================
+       RÈGLES D'EXPORT PDF / PRINT CHROME
+       ========================================================================== */
+    @media print {
+      body {
+        background: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .studio-bar, .no-print {
+        display: none !important;
+      }
+
+      .doc-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        gap: 0 !important;
+      }
+
+      .a4-page {
+        width: 210mm !important;
+        height: 297mm !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRE DE COMMANDE SUPÉRIEURE (NON IMPRIMÉE) -->
+  <aside class="studio-bar no-print">
+    <div class="studio-brand">
+      <div class="brand-circle">11</div>
+      <div>
+        <div class="studio-title">11 SECRETS DE BEAUTÉ • STUDIO D'IMPRESSION A4</div>
+        <div style="font-size: 11px; color: #8C9996; margin-top: 2px;">
+          Format: A4 Paysage/Portrait 210×297mm | 300 DPI | Chrome Print to PDF
+        </div>
+      </div>
+    </div>
+    <div class="studio-actions">
+      <button class="btn-print" onclick="window.print()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        IMPRIMER / EXPORTER EN PDF
+      </button>
+    </div>
+  </aside>
+
+  <main class="doc-container">
+
+    <!-- =================================================================== -->
+    <!-- MODÈLE 1 : ÉDITION CRÈME & OR (LIGHT EDITORIAL)                     -->
+    <!-- =================================================================== -->
+    <article class="a4-page theme-light">
+      <div class="editorial-border"></div>
+
+      <div class="page-frame">
+        
+        <!-- HEADER -->
+        <header class="poster-header">
+          <div class="emblem-wrap">
+            <span class="emblem-line"></span>
+            <span class="emblem-icon">✦ &nbsp; 11 &nbsp; ✦</span>
+            <span class="emblem-line right"></span>
+          </div>
+          <h1 class="main-brand-title">11 Secrets de Beauté</h1>
+          <p class="sub-brand-tagline">Rituels Capillaires &amp; Soins Sur-Mesure</p>
+          <p class="header-desc">L'excellence au service de votre beauté naturelle</p>
+        </header>
+
+        <!-- GRID 2x2 CENTRAL -->
+        <section class="services-grid-2x2">
+          
+          <!-- SERVICE 1 : JAPANESE HEAD SPA -->
+          <div class="service-card">
+            <div class="card-media">
+              <img 
+                src="../assets/images/head-spa.jpg" 
+                alt="Japanese Head Spa" 
+                onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80'"
+              >
+            </div>
+            <div class="card-caption-pill">
+              <span class="pill-number">RITUEL 01</span>
+              <h2 class="pill-title">Japanese Head Spa</h2>
+              <div class="pill-divider"></div>
+              <p class="pill-subtitle">Purification &amp; Détente Absolue</p>
+            </div>
+          </div>
+
+          <!-- SERVICE 2 : LISSAGE & SOIN BOTOX -->
+          <div class="service-card">
+            <div class="card-media">
+              <img 
+                src="../assets/images/hero-salon.jpg" 
+                alt="Lissage & Soin Botox" 
+                onerror="this.src='https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=800&q=80'"
+              >
+            </div>
+            <div class="card-caption-pill">
+              <span class="pill-number">EXPERTISE 02</span>
+              <h2 class="pill-title">Lissage &amp; Soin Botox</h2>
+              <div class="pill-divider"></div>
+              <p class="pill-subtitle">Effet Miroir &amp; Nutrition Profonde</p>
+            </div>
+          </div>
+
+          <!-- SERVICE 3 : PERRUQUES & EXTENSIONS -->
+          <div class="service-card">
+            <div class="card-media">
+              <img 
+                src="../assets/images/perruques-medicales.jpg" 
+                alt="Perruques & Extensions" 
+                onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80'"
+              >
+            </div>
+            <div class="card-caption-pill">
+              <span class="pill-number">CRÉATION 03</span>
+              <h2 class="pill-title">Perruques &amp; Extensions</h2>
+              <div class="pill-divider"></div>
+              <p class="pill-subtitle">Médicales, Esthétiques &amp; Sur-Mesure</p>
+            </div>
+          </div>
+
+          <!-- SERVICE 4 : SOINS ESTHÉTIQUES -->
+          <div class="service-card">
+            <div class="card-media">
+              <img 
+                src="../assets/images/detail-spa.jpg" 
+                alt="Soins Esthétiques" 
+                onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80'"
+              >
+            </div>
+            <div class="card-caption-pill">
+              <span class="pill-number">CABINE 04</span>
+              <h2 class="pill-title">Soins Esthétiques</h2>
+              <div class="pill-divider"></div>
+              <p class="pill-subtitle">Éclat Naturel &amp; Précision</p>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- BANDEAU SOUS-TITRE INTERMÉDIAIRE -->
+        <div class="statement-strip">
+          <h3 class="statement-title">Rituels Capillaires &amp; Soins Sur-Mesure</h3>
+          <p class="statement-desc">Sublimez votre beauté naturelle avec notre expertise d'exception</p>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="poster-footer">
+          <div class="footer-contacts">
+            <span class="contact-item">
+              <span class="icon">📍</span> Rue de Lausanne 11, 1020 Renens
+            </span>
+            <span class="footer-sep">|</span>
+            <span class="contact-item">
+              <span class="icon">📲</span> 076 660 60 26
+            </span>
+            <span class="footer-sep">|</span>
+            <span class="contact-item">
+              <span class="icon">✦</span> Sur rendez-vous
+            </span>
+          </div>
+          <p class="footer-sub">www.11secretsdebeaute.ch • Salon Boutique &amp; Institut Privé</p>
+        </footer>
+
+      </div>
+    </article>
+
+
+    <!-- =================================================================== -->
+    <!-- MODÈLE 2 : ÉDITION VERT FORÊT PROFOND (DARK BOTANICAL LUXURY)      -->
+    <!-- =================================================================== -->
+    <article class="a4-page theme-dark">
+      <div class="editorial-border"></div>
+
+      <div class="page-frame">
+        
+        <!-- HEADER -->
+        <header class="poster-header">
+          <div class="emblem-wrap">
+            <span class="emblem-line"></span>
+            <span class="emblem-icon" style="color: var(--c-gold-primary);">✦ &nbsp; 11 &nbsp; ✦</span>
+            <span class="emblem-line right"></span>
+          </div>
+          <h1 class="main-brand-title">11 Secrets de Beauté</h1>
+          <p class="sub-brand-tagline">Rituels Capillaires &amp; Soins Sur-Mesure</p>
+          <p class="header-desc">Votre destination d'exception pour la beauté et le bien-être</p>
+        </header>
+
+        <!-- GRID 2x2 CENTRAL -->
+        <section class="services-grid-2x2">
+          
+          <!-- SERVICE 1 : JAPANESE HEAD SPA -->
+          <div class="service-card">
+            <div class="card-media">
+              <img 
+                src="../assets/images/head-spa.jpg" 
+                alt="Japanese Head Spa" 
+                onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80'"
+              >
+            </div>
+            <div class="card-caption-pill">
+              <span class="pill-number">RITUEL 01</span>
+              <h2 class="pill-title">Japanese Head Spa</h2>
+              <div class="pill-divider"></div>
+              <p class="pill-subtitle">Purification &amp; Détente Absolue</p>
+            </div>
+          </div>
+
+          <!-- SERVICE 2 : LISSAGE & SOIN BOTOX -->
+          <div class="service-card">
+            <div class="card-media">
+              <img 
+                src="../assets/images/hero-salon.jpg" 
+                alt="Lissage & Soin Botox" 
+                onerror="this.src='https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=800&q=80'"
+              >
+            </div>
+            <div class="card-caption-pill">
+              <span class="pill-number">EXPERTISE 02</span>
+              <h2 class="pill-title">Lissage &amp; Soin Botox</h2>
+              <div class="pill-divider"></div>
+              <p class="pill-subtitle">Effet Miroir &amp; Nutrition Profonde</p>
+            </div>
+          </div>
+
+          <!-- SERVICE 3 : PERRUQUES & EXTENSIONS -->
+          <div class="service-card">
+            <div class="card-media">
+              <img 
+                src="../assets/images/perruques-medicales.jpg" 
+                alt="Perruques & Extensions" 
+                onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80'"
+              >
+            </div>
+            <div class="card-caption-pill">
+              <span class="pill-number">CRÉATION 03</span>
+              <h2 class="pill-title">Perruques &amp; Extensions</h2>
+              <div class="pill-divider"></div>
+              <p class="pill-subtitle">Médicales, Esthétiques &amp; Sur-Mesure</p>
+            </div>
+          </div>
+
+          <!-- SERVICE 4 : SOINS ESTHÉTIQUES -->
+          <div class="service-card">
+            <div class="card-media">
+              <img 
+                src="../assets/images/detail-spa.jpg" 
+                alt="Soins Esthétiques" 
+                onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80'"
+              >
+            </div>
+            <div class="card-caption-pill">
+              <span class="pill-number">CABINE 04</span>
+              <h2 class="pill-title">Soins Esthétiques</h2>
+              <div class="pill-divider"></div>
+              <p class="pill-subtitle">Éclat Naturel &amp; Précision</p>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- BANDEAU SOUS-TITRE INTERMÉDIAIRE -->
+        <div class="statement-strip">
+          <h3 class="statement-title">Rituels Capillaires &amp; Soins Sur-Mesure</h3>
+          <p class="statement-desc">Sublimez votre beauté naturelle avec notre expertise d'exception</p>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="poster-footer">
+          <div class="footer-contacts">
+            <span class="contact-item">
+              <span class="icon">📍</span> Rue de Lausanne 11, 1020 Renens
+            </span>
+            <span class="footer-sep">|</span>
+            <span class="contact-item">
+              <span class="icon">📲</span> 076 660 60 26
+            </span>
+            <span class="footer-sep">|</span>
+            <span class="contact-item">
+              <span class="icon">✦</span> Sur rendez-vous
+            </span>
+          </div>
+          <p class="footer-sub">www.11secretsdebeaute.ch • Salon Boutique &amp; Institut Privé</p>
+        </footer>
+
+      </div>
+    </article>
+
+  </main>
+
+</body>
+</html>
