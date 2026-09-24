@@ -4,19 +4,32 @@
    ========================================================================== */
 
 :root {
-  --c-emerald-dark: #073B36;
-  --c-emerald: #0D5C54;
-  --c-emerald-light: #167C72;
-  --c-emerald-soft: #EBF4F2;
+  /* ==========================================================================
+     PALETTE ÉMERAUDE LUMINEUSE "11 SECRETS DE BEAUTÉ" (VERT ÉMERAUDE PLUS CLAIR)
+     ========================================================================== */
+  --c-emerald-dark: #12543F;   /* Émeraude noble, soutenu et ultra lisible */
+  --c-emerald: #1B7A5E;        /* Émeraude joyau lumineuse et éclatante (vert plus clair) */
+  --c-emerald-light: #259B78;  /* Émeraude claire fraîche */
+  --c-emerald-bright: #2DB38B; /* Touche vive émeraude pour stickers et accents */
+  --c-emerald-soft: #EAF7F2;   /* Voile menthe/émeraude clair et soyeux */
+  --c-emerald-glow: rgba(27, 122, 94, 0.14);
+  
   --c-gold: #C5A880;
   --c-gold-dark: #9A7B52;
   --c-gold-soft: #FAF4EC;
-  --c-text-main: #1A2220;
-  --c-text-muted: #52605D;
-  --c-border-subtle: #E8E5DF;
+  --c-gold-glow: rgba(197, 168, 128, 0.25);
+  
+  --c-text-main: #182320;
+  --c-text-muted: #53635F;
+  --c-border-subtle: #E2E8E5;
   --c-bg-paper: #FFFFFF;
   --c-bg-warm: #FAF9F6;
+  
+  /* Typographies Éditoriales Collage : Mix de Serif, Sans, Script & Roman */
+  --font-display: 'Playfair Display', serif;
+  --font-title: 'Cinzel', serif;
   --font-script: 'Alex Brush', cursive;
+  --font-cursive: 'Pinyon Script', cursive;
   --font-serif: 'Cormorant Garamond', serif;
   --font-sans: 'Montserrat', sans-serif;
 }
@@ -119,7 +132,7 @@ body {
 .pill-btn.active, .tab-btn.active {
   background: var(--c-emerald);
   color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(13, 92, 84, 0.5);
+  box-shadow: 0 2px 8px rgba(27, 122, 94, 0.5);
 }
 
 .pill-btn:hover:not(.active), .tab-btn:hover:not(.active) {
@@ -303,7 +316,7 @@ body {
 /* VOLET 1 : RABATTABLE INTÉRIEUR (Abonnements, Cadeaux, Journées Spéciales) */
 .panel-flap {
   background: #FCFCFA;
-  border-right: 1px solid rgba(13, 92, 84, 0.08);
+  border-right: 1px solid rgba(27, 122, 94, 0.08);
 }
 
 .panel-header-minimal {
@@ -360,37 +373,43 @@ body {
 
 .card-badge {
   display: inline-block;
+  font-family: var(--font-sans);
   font-size: 7.5px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background: var(--c-gold);
+  background: linear-gradient(135deg, var(--c-gold) 0%, var(--c-gold-dark) 100%);
   color: #FFFFFF;
-  padding: 2px 6px;
-  border-radius: 10px;
+  padding: 2.5px 8px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(154, 123, 82, 0.25);
 }
 
 .card-badge-muted {
   display: inline-block;
+  font-family: var(--font-sans);
   font-size: 7.5px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
   background: var(--c-emerald-soft);
   color: var(--c-emerald);
-  padding: 2px 6px;
-  border-radius: 10px;
+  padding: 2.5px 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(27, 122, 94, 0.2);
 }
 
 .card-tag-soft {
-  font-size: 7.5px;
-  font-weight: 600;
+  font-size: 7.8px;
+  font-family: var(--font-title);
+  font-weight: 700;
   color: var(--c-gold-dark);
+  letter-spacing: 0.5px;
 }
 
 .card-title {
-  font-family: var(--font-serif);
-  font-size: 14.5px;
+  font-family: var(--font-display);
+  font-size: 15px;
   font-weight: 700;
   color: var(--c-emerald-dark);
   line-height: 1.2;
@@ -411,15 +430,16 @@ body {
   font-size: 8.5px;
   color: var(--c-emerald-dark);
   font-weight: 600;
-  background: #EDF7F4;
+  background: var(--c-emerald-soft);
+  border-left: 2.5px solid var(--c-emerald);
   padding: 3px 6px;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .bonus-tag {
   background: var(--c-emerald);
   color: #FFFFFF;
-  padding: 1px 5px;
+  padding: 1.5px 6px;
   border-radius: 2px;
   font-size: 7px;
   font-weight: 800;
@@ -434,9 +454,9 @@ body {
 }
 
 .price-big {
-  font-family: var(--font-serif);
-  font-size: 19px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
   color: var(--c-emerald);
   line-height: 1;
 }
@@ -459,7 +479,7 @@ body {
 /* JOURNÉES SPÉCIALES BOX */
 .special-days-box {
   background: #FFFFFF;
-  border: 1px solid rgba(13, 92, 84, 0.2);
+  border: 1px solid rgba(27, 122, 94, 0.2);
   border-radius: 5px;
   padding: 8px 10px;
 }
@@ -499,16 +519,18 @@ body {
 }
 
 .day-badge {
+  font-family: var(--font-sans);
   font-size: 8px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  background: var(--c-emerald-dark);
+  letter-spacing: 0.8px;
+  background: linear-gradient(135deg, var(--c-emerald) 0%, var(--c-emerald-dark) 100%);
   color: #FFFFFF;
-  padding: 2.5px 6px;
+  padding: 3px 6px;
   border-radius: 3px;
-  width: 50px;
+  width: 52px;
   text-align: center;
+  box-shadow: 0 1px 4px rgba(18, 84, 63, 0.25);
 }
 
 .day-info {
@@ -519,9 +541,11 @@ body {
 }
 
 .day-title {
-  font-size: 9.5px;
+  font-family: var(--font-display);
+  font-size: 10px;
   font-weight: 700;
   color: var(--c-text-main);
+  letter-spacing: 0.2px;
 }
 
 .day-serv {
@@ -542,9 +566,9 @@ body {
 }
 
 .new-p {
-  font-family: var(--font-serif);
-  font-size: 14px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 15.5px;
+  font-weight: 800;
   color: var(--c-emerald);
 }
 
@@ -596,7 +620,7 @@ body {
    ========================================================================== */
 .panel-back {
   background: #FFFFFF;
-  border-right: 1px solid rgba(13, 92, 84, 0.08);
+  border-right: 1px solid rgba(27, 122, 94, 0.08);
   text-align: center;
 }
 
@@ -693,7 +717,7 @@ body {
 /* HORAIRES CARD */
 .hours-card {
   background: #FCFCFA;
-  border: 1px solid rgba(13, 92, 84, 0.1);
+  border: 1px solid rgba(27, 122, 94, 0.1);
   border-radius: 5px;
   padding: 7px 10px;
   text-align: left;
@@ -782,7 +806,7 @@ body {
   height: 44px;
   background: #FFFFFF;
   padding: 2px;
-  border: 1px solid rgba(13, 92, 84, 0.25);
+  border: 1px solid rgba(27, 122, 94, 0.25);
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
@@ -824,7 +848,7 @@ body {
   right: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 80% 20%, rgba(13, 92, 84, 0.06) 0%, transparent 60%);
+  background: radial-gradient(circle at 80% 20%, rgba(27, 122, 94, 0.06) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -850,28 +874,62 @@ body {
   font-size: 10px;
 }
 
+.cover-seal-monogram {
+  font-family: var(--font-title);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: var(--c-gold-dark);
+  margin-bottom: 2px;
+}
+
 .cover-sub-brand {
+  font-family: var(--font-title);
   font-size: 8px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2.2px;
   color: var(--c-gold-dark);
 }
 
 .cover-main-title {
-  font-family: var(--font-script);
-  font-size: 42px;
-  color: var(--c-emerald);
+  font-family: var(--font-display);
   line-height: 1;
   margin-top: 2px;
+  margin-bottom: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-name-serif {
+  font-family: var(--font-title);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--c-emerald-dark);
+  text-transform: uppercase;
+  display: block;
+}
+
+.brand-name-script {
+  font-family: var(--font-script);
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--c-emerald);
+  display: block;
+  margin-top: -8px;
+  margin-bottom: -4px;
+  line-height: 0.95;
 }
 
 .cover-tagline {
   font-family: var(--font-serif);
-  font-size: 11px;
+  font-size: 10.5px;
   font-style: italic;
   color: var(--c-text-muted);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
 }
 
 /* COVER PHOTO AGRANDIE POUR REMPLIR LE VOLET */
@@ -894,42 +952,88 @@ body {
 
 .cover-seal {
   position: absolute;
-  top: 6px;
-  right: 6px;
-  background: rgba(7, 59, 54, 0.85);
-  backdrop-filter: blur(2px);
-  color: var(--c-gold-soft);
-  font-size: 7px;
+  top: 7px;
+  right: 7px;
+  background: linear-gradient(135deg, var(--c-emerald) 0%, var(--c-emerald-dark) 100%);
+  color: #FFFFFF;
+  font-family: var(--font-title);
+  font-size: 7.2px;
   font-weight: 800;
-  letter-spacing: 1px;
-  padding: 2px 7px;
+  letter-spacing: 1.2px;
+  padding: 2.5px 8px;
   border-radius: 2px;
   border: 1px solid var(--c-gold);
+  box-shadow: 0 3px 10px rgba(18, 84, 63, 0.35);
+  transform: rotate(2deg);
+}
+
+.cover-sticker-bottom {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(4px);
+  padding: 3px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--c-gold);
+  font-family: var(--font-title);
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--c-emerald-dark);
+  white-space: nowrap;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
 .cover-title-badge {
   background: var(--c-bg-warm);
-  border: 1px solid rgba(197, 168, 128, 0.4);
+  border: 1px solid rgba(197, 168, 128, 0.45);
   border-radius: 5px;
-  padding: 8px 12px;
+  padding: 7px 12px;
+  box-shadow: 0 2px 8px rgba(27, 122, 94, 0.05);
 }
 
 .card-eyebrow {
+  font-family: var(--font-sans);
   font-size: 7.5px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--c-gold-dark);
-  display: block;
+  letter-spacing: 1.8px;
+  color: var(--c-emerald);
+  background: var(--c-emerald-soft);
+  padding: 2px 9px;
+  border-radius: 12px;
+  display: inline-block;
+  border: 1px solid rgba(27, 122, 94, 0.2);
+  margin-bottom: 3px;
 }
 
 .card-main-heading {
-  font-family: var(--font-serif);
-  font-size: 19px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  line-height: 1;
+  margin: 1px 0;
+}
+
+.card-main-heading .heading-tag {
+  font-family: var(--font-title);
+  font-size: 13px;
   font-weight: 700;
-  color: var(--c-emerald-dark);
-  letter-spacing: 1.2px;
-  line-height: 1.15;
+  letter-spacing: 2.5px;
+  color: var(--c-gold-dark);
+  text-transform: uppercase;
+}
+
+.card-main-heading .heading-focus {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--c-emerald);
+  letter-spacing: 0.5px;
 }
 
 .card-sep {
@@ -940,20 +1044,23 @@ body {
 }
 
 .card-sub-heading {
-  font-size: 8.5px;
+  font-family: var(--font-serif);
+  font-size: 8.8px;
+  font-style: italic;
   color: var(--c-text-muted);
 }
 
 .cover-features-list {
+  font-family: var(--font-sans);
   font-size: 8.5px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--c-emerald);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 
 .cover-features-list .dot {
@@ -984,7 +1091,7 @@ body {
    ========================================================================== */
 .sheet-interior .panel-menu {
   background: #FFFFFF;
-  border-right: 1px solid rgba(13, 92, 84, 0.08);
+  border-right: 1px solid rgba(27, 122, 94, 0.08);
 }
 
 .sheet-interior .panel-menu:last-child {
@@ -1001,35 +1108,51 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  border-bottom: 1.5px solid var(--c-emerald);
+  border-bottom: 2px solid;
+  border-image: linear-gradient(90deg, var(--c-emerald) 0%, var(--c-emerald-light) 65%, var(--c-gold) 100%) 1;
   padding-bottom: 2.5px;
   margin-bottom: 3.5px;
 }
 
 .menu-title {
-  font-family: var(--font-serif);
-  font-size: 15px;
+  font-family: var(--font-display);
+  font-size: 14.5px;
   font-weight: 700;
   color: var(--c-emerald-dark);
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.5px;
   line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.menu-title::before {
+  content: '✦';
+  font-family: var(--font-title);
+  font-size: 8px;
+  color: var(--c-gold-dark);
 }
 
 .menu-tagline {
-  font-size: 7.8px;
-  font-style: italic;
+  font-family: var(--font-script);
+  font-size: 14.5px;
   color: var(--c-gold-dark);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  line-height: 1;
 }
 
 .table-legend {
   display: flex;
   gap: 8px;
   font-size: 8px;
-  font-weight: 700;
+  font-family: var(--font-sans);
+  font-weight: 800;
   text-transform: uppercase;
   color: var(--c-gold-dark);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
 }
 
 .table-legend span {
@@ -1050,6 +1173,7 @@ body {
   padding: 9.4px 2px;
   font-size: 9.7px;
   border-bottom: 1px solid rgba(0,0,0,0.04);
+  transition: background 0.2s ease;
 }
 
 .expanded-table-forfaits .table-row {
@@ -1065,14 +1189,16 @@ body {
 }
 
 .table-row.highlight-row {
-  background: rgba(13, 92, 84, 0.05);
+  background: linear-gradient(90deg, var(--c-emerald-soft) 0%, rgba(234, 247, 242, 0.2) 100%);
+  border-left: 2.5px solid var(--c-emerald);
+  padding-left: 5px;
   font-weight: 600;
 }
 
 .table-row.highlight-gold {
-  background: rgba(197, 168, 128, 0.14);
-  border-left: 2px solid var(--c-gold);
-  padding-left: 4px;
+  background: linear-gradient(90deg, var(--c-gold-soft) 0%, rgba(250, 244, 236, 0.25) 100%);
+  border-left: 2.5px solid var(--c-gold-dark);
+  padding-left: 5px;
   font-weight: 600;
 }
 
@@ -1164,16 +1290,17 @@ body {
 }
 
 .dot-item.highlight-row {
-  background: rgba(13, 92, 84, 0.04);
-  padding-left: 4px;
+  background: linear-gradient(90deg, var(--c-emerald-soft) 0%, rgba(234, 247, 242, 0.2) 100%);
+  border-left: 2.5px solid var(--c-emerald);
+  padding-left: 5px;
   padding-right: 4px;
   border-radius: 2px;
   font-weight: 600;
 }
 
 .dot-item.highlight-gold {
-  background: rgba(197, 168, 128, 0.14);
-  border-left: 2px solid var(--c-gold);
+  background: linear-gradient(90deg, var(--c-gold-soft) 0%, rgba(250, 244, 236, 0.25) 100%);
+  border-left: 2.5px solid var(--c-gold-dark);
   padding-left: 5px;
   padding-right: 4px;
   border-radius: 2px;
@@ -1204,7 +1331,7 @@ body {
   font-family: var(--font-sans);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
-  font-size: 10px;
+  font-size: 10.5px;
 }
 
 .d-price-quote {
@@ -1221,8 +1348,8 @@ body {
   border-radius: 5px;
   padding: 5px 9px;
   margin: 1px 0;
-  box-shadow: 0 2px 8px rgba(7, 59, 54, 0.25);
-  border: 1px solid rgba(197, 168, 128, 0.35);
+  box-shadow: 0 3px 12px rgba(27, 122, 94, 0.28);
+  border: 1px solid rgba(197, 168, 128, 0.45);
 }
 
 .lis-header {
@@ -1359,7 +1486,7 @@ body {
 
 .cure-item {
   background: #FFFFFF;
-  border: 1px solid rgba(13, 92, 84, 0.12);
+  border: 1px solid rgba(27, 122, 94, 0.12);
   border-radius: 3px;
   padding: 4px 6px;
   display: flex;
