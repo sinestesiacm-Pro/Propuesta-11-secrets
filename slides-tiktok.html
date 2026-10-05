@@ -10,6 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
+  <!-- Client-Side High-Res Image & Archive Generators -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
   <style>
     /* ==========================================================================
        DESIGN SYSTEM & TOKENS (Taste + Impeccable + Emil Kowalski guidelines)
@@ -796,6 +801,69 @@
         font-size: 24px;
       }
     }
+
+    /* Headless Chrome Full-Bleed 1080x1920 Export Mode */
+    body.mode-export {
+      background: #000 !important;
+      overflow: hidden !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 1080px !important;
+      height: 1920px !important;
+    }
+    body.mode-export .top-toolbar,
+    body.mode-export .nav-arrow-btn,
+    body.mode-export .tap-nav-left,
+    body.mode-export .tap-nav-right,
+    body.mode-export .grid-export-view,
+    body.mode-export .tiktok-safe-overlay,
+    body.mode-export #export-status-toast {
+      display: none !important;
+    }
+    body.mode-export .deck-container {
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 1080px !important;
+      height: 1920px !important;
+      max-width: 1080px !important;
+    }
+    body.mode-export .tiktok-frame {
+      width: 1080px !important;
+      height: 1920px !important;
+      max-width: 1080px !important;
+      max-height: 1920px !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      border: none !important;
+      transform: scale(2.634);
+      transform-origin: top left;
+    }
+
+    /* Toast Notification */
+    #export-status-toast {
+      display: none;
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(6, 26, 20, 0.96);
+      border: 1px solid var(--c-gold);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 999px;
+      z-index: 9999;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 0.02em;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
@@ -824,8 +892,22 @@
       <button class="tool-btn" id="btn-mode-grid" title="Voir les 6 slides en grille haute résolution">
         <span>▦</span> Grille (6)
       </button>
+
+      <button class="tool-btn" id="btn-download-current" style="background: rgba(46, 197, 154, 0.22); border-color: var(--c-emerald-vivid); color: #fff;" title="Télécharger la slide actuelle en PNG haute résolution (1080x1920)">
+        <span>📥</span> Télécharger (PNG)
+      </button>
+
+      <button class="tool-btn" id="btn-download-all" style="background: rgba(197, 168, 128, 0.25); border-color: var(--c-gold-bright); color: var(--c-gold-bright);" title="Télécharger toutes les 6 slides dans un fichier ZIP">
+        <span>📦</span> Tout (ZIP)
+      </button>
     </div>
   </header>
+
+  <!-- Export Status Toast -->
+  <div id="export-status-toast">
+    <span id="export-spinner" style="display:inline-block; animation:spin 1s linear infinite;">⏳</span>
+    <span id="export-status-text">Exportation en cours...</span>
+  </div>
 
   <!-- ======================================================================= -->
   <!-- MAIN DECK CONTAINER (CAROUSEL MODE)                                     -->
@@ -1440,6 +1522,126 @@
         btnGrid.classList.add('active');
         btnCarousel.classList.remove('active');
       });
+
+      // =======================================================================
+      // HIGH-RES EXPORT & DOWNLOAD HANDLERS (html2canvas + JSZip + FileSaver)
+      // =======================================================================
+      const toast = document.getElementById('export-status-toast');
+      const toastText = document.getElementById('export-status-text');
+
+      function showToast(msg) {
+        toast.style.display = 'flex';
+        toastText.textContent = msg;
+      }
+
+      function hideToast(delay = 2500) {
+        setTimeout(() => { toast.style.display = 'none'; }, delay);
+      }
+
+      // Download single active slide as PNG (1080x1920 scale)
+      async function downloadCurrentSlide() {
+        showToast(`Génération de la Slide 0${currentIndex + 1} en haute résolution...`);
+        const frame = document.getElementById('tiktok-viewport');
+        const safeWasVisible = safeOverlay.classList.contains('visible');
+        if (safeWasVisible) safeOverlay.classList.remove('visible');
+
+        try {
+          const canvas = await html2canvas(frame, {
+            scale: 2.7, // ~1100 x 2000 px, optimal for TikTok 9:16
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: '#061A14',
+            logging: false
+          });
+
+          if (safeWasVisible) safeOverlay.classList.add('visible');
+
+          canvas.toBlob((blob) => {
+            if (!blob) throw new Error("Échec de création du blob");
+            const slideNames = [
+              "01-couverture-renaissance-automne",
+              "02-diagnostic-climat-suisse",
+              "03-head-spa-japonais-detox",
+              "04-soin-botox-lissage-tanin",
+              "05-manucure-russe-precision",
+              "06-reservation-vip-renens"
+            ];
+            const filename = `11secrets-slide-${slideNames[currentIndex] || ('0' + (currentIndex + 1))}.png`;
+            saveAs(blob, filename);
+            showToast(`✅ Slide 0${currentIndex + 1} téléchargée avec succès !`);
+            hideToast();
+          }, 'image/png');
+        } catch (err) {
+          console.error("Export error:", err);
+          showToast("❌ Erreur lors de l'exportation. Réessayez.");
+          hideToast(3500);
+        }
+      }
+
+      // Download all 6 slides in a ZIP archive
+      async function downloadAllSlidesZip() {
+        showToast("Initialisation de l'archive ZIP...");
+        const zip = new JSZip();
+        const folder = zip.folder("11-secrets-slides-tiktok-2026");
+        const originalIndex = currentIndex;
+        const safeWasVisible = safeOverlay.classList.contains('visible');
+        if (safeWasVisible) safeOverlay.classList.remove('visible');
+
+        const slideNames = [
+          "01-couverture-renaissance-automne",
+          "02-diagnostic-climat-suisse",
+          "03-head-spa-japonais-detox",
+          "04-soin-botox-lissage-tanin",
+          "05-manucure-russe-precision",
+          "06-reservation-vip-renens"
+        ];
+
+        try {
+          for (let i = 0; i < totalSlides; i++) {
+            showToast(`Rendu de la Slide 0${i + 1} sur 0${totalSlides}...`);
+            goToSlide(i);
+            // Allow DOM / images to stabilize
+            await new Promise(r => setTimeout(r, 260));
+
+            const frame = document.getElementById('tiktok-viewport');
+            const canvas = await html2canvas(frame, {
+              scale: 2.7,
+              useCORS: true,
+              allowTaint: true,
+              backgroundColor: '#061A14',
+              logging: false
+            });
+
+            const dataUrl = canvas.toDataURL('image/png');
+            const base64Data = dataUrl.replace(/^data:image\/png;base64,/, "");
+            folder.file(`slide-${slideNames[i]}.png`, base64Data, { base64: true });
+          }
+
+          showToast("📦 Compression de l'archive ZIP en cours...");
+          const content = await zip.generateAsync({ type: "blob" });
+          saveAs(content, "11-secrets-slides-tiktok-2026.zip");
+          showToast("✅ Archive des 6 slides téléchargée !");
+          hideToast(3000);
+        } catch (err) {
+          console.error("Zip export error:", err);
+          showToast("❌ Erreur lors de la création du ZIP.");
+          hideToast(3500);
+        } finally {
+          goToSlide(originalIndex);
+          if (safeWasVisible) safeOverlay.classList.add('visible');
+        }
+      }
+
+      document.getElementById('btn-download-current').addEventListener('click', downloadCurrentSlide);
+      document.getElementById('btn-download-all').addEventListener('click', downloadAllSlidesZip);
+
+      // URL parameters check for automated headless capture: ?slide=X&export=1
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('export') === '1') {
+        document.body.classList.add('mode-export');
+        const targetSlide = parseInt(urlParams.get('slide') || '0', 10);
+        goToSlide(targetSlide);
+      }
 
     })();
   </script>
