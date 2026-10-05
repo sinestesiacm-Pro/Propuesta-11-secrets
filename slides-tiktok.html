@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>11 Secrets de Beauté • Slides TikTok Carousel (Renaissance d'Automne 2026)</title>
+
+  <!-- Google Fonts: Editorial Luxury + Modern Sans + Script Accents -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & TOKENS (Taste + Impeccable + Emil Kowalski guidelines)
+       ========================================================================== */
+    :root {
+      /* Colors */
+      --c-emerald-night: #061A14;
+      --c-emerald-deep: #0D3E30;
+      --c-emerald: #1B7A5E;
+      --c-emerald-light: #259B78;
+      --c-emerald-vivid: #2EC59A;
+      --c-emerald-soft: #EBF8F3;
+      
+      --c-gold: #C5A880;
+      --c-gold-bright: #F0D7AC;
+      --c-gold-glow: rgba(197, 168, 128, 0.28);
+      
+      --c-cream: #FBF9F5;
+      --c-cream-dim: rgba(251, 249, 245, 0.78);
+      --c-cream-muted: rgba(251, 249, 245, 0.55);
+      
+      --c-dark-glass: rgba(6, 26, 20, 0.82);
+      --c-card-glass: rgba(13, 62, 48, 0.42);
+      
+      /* Typography */
+      --font-display: 'Cinzel', serif;
+      --font-editorial: 'Playfair Display', serif;
+      --font-script: 'Alex Brush', cursive;
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'Montserrat', sans-serif;
+      
+      /* Emil Kowalski custom easings */
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+      --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+      --duration-slide: 400ms;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: #0B0E0D;
+      color: var(--c-cream);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow-x: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* ==========================================================================
+       CONTROL TOOLBAR (Top Bar for Preview / Export / Toggles)
+       ========================================================================== */
+    .top-toolbar {
+      width: 100%;
+      max-width: 900px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      z-index: 100;
+      background: rgba(11, 14, 13, 0.95);
+      border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+    }
+
+    .brand-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-badge-emblem {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--c-gold);
+      background: radial-gradient(circle, var(--c-emerald) 0%, var(--c-emerald-night) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 11px;
+      color: var(--c-gold-bright);
+      font-weight: 700;
+    }
+
+    .brand-badge-info h1 {
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: var(--c-cream);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .brand-badge-info p {
+      font-size: 11px;
+      color: var(--c-gold);
+      letter-spacing: 0.05em;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tool-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--c-cream);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 160ms var(--ease-out);
+    }
+
+    .tool-btn:hover {
+      background: rgba(27, 122, 94, 0.25);
+      border-color: var(--c-emerald-vivid);
+      color: #fff;
+    }
+
+    .tool-btn:active {
+      transform: scale(0.97);
+    }
+
+    .tool-btn.active {
+      background: var(--c-emerald);
+      border-color: var(--c-emerald-vivid);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(46, 197, 154, 0.35);
+    }
+
+    /* ==========================================================================
+       VIEWPORT WRAPPER & 9:16 DEVICE FRAME
+       ========================================================================== */
+    .deck-container {
+      width: 100%;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 8px 24px;
+    }
+
+    /* 9:16 TikTok Aspect Ratio Frame (414px x 736px or scale responsive) */
+    .tiktok-frame {
+      position: relative;
+      width: 100%;
+      max-width: 410px;
+      height: 740px;
+      max-height: calc(100dvh - 90px);
+      aspect-ratio: 9 / 16;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(197, 168, 128, 0.35);
+      background: var(--c-emerald-night);
+    }
+
+    /* Carousel Track */
+    .slides-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0.96) translateX(40px);
+      transition: transform var(--duration-slide) var(--ease-out),
+                  opacity var(--duration-slide) var(--ease-out),
+                  visibility 0ms var(--duration-slide);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      background: var(--c-emerald-night);
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1) translateX(0);
+      transition: transform var(--duration-slide) var(--ease-out),
+                  opacity var(--duration-slide) var(--ease-out),
+                  visibility 0ms 0ms;
+      z-index: 10;
+    }
+
+    .slide.prev {
+      transform: scale(0.96) translateX(-40px);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* ==========================================================================
+       SLIDE BACKGROUNDS & PHOTO MASKS
+       ========================================================================== */
+    .slide-bg-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      transition: transform 8s ease-out;
+    }
+
+    .slide.active .slide-bg-photo {
+      transform: scale(1.04);
+    }
+
+    /* Atmospheric Gradients for High Readability */
+    .slide-overlay-radial {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 25%, rgba(6, 26, 20, 0.4) 0%, rgba(6, 26, 20, 0.94) 75%, #051510 100%);
+      z-index: 2;
+    }
+
+    .slide-overlay-bottom {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, 
+        rgba(6, 26, 20, 0.35) 0%, 
+        rgba(6, 26, 20, 0.1) 35%, 
+        rgba(6, 26, 20, 0.85) 65%, 
+        rgba(6, 26, 20, 0.98) 95%
+      );
+      z-index: 2;
+    }
+
+    /* Editorial Grain Texture Overlay */
+    .slide-grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 3;
+      background-image: radial-gradient(#fff 1px, transparent 1px);
+      background-size: 8px 8px;
+    }
+
+    /* ==========================================================================
+       TIKTOK STORY PROGRESS BARS & COUNTER (Top Indicator)
+       ========================================================================== */
+    .story-indicators {
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      gap: 5px;
+      z-index: 50;
+    }
+
+    .story-bar-segment {
+      flex: 1;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .story-bar-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%;
+      background: #FFFFFF;
+      border-radius: 999px;
+      transition: width 240ms var(--ease-out);
+    }
+
+    .story-bar-segment.viewed .story-bar-fill {
+      width: 100%;
+      background: var(--c-gold-bright);
+    }
+
+    .story-bar-segment.current .story-bar-fill {
+      width: 100%;
+      background: #FFFFFF;
+      box-shadow: 0 0 8px #FFFFFF;
+    }
+
+    /* Slide Counter & Header Badge */
+    .story-top-meta {
+      position: absolute;
+      top: 26px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 50;
+      pointer-events: none;
+    }
+
+    .meta-salon-tag {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--c-gold-bright);
+      text-transform: uppercase;
+      font-weight: 700;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-slide-counter {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #fff;
+      background: rgba(6, 26, 20, 0.75);
+      border: 1px solid rgba(197, 168, 128, 0.4);
+      padding: 3px 8px;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+    }
+
+    /* ==========================================================================
+       CONTENT LAYOUT & EDITORIAL TYPOGRAPHY (Inside Safe Zone)
+       ========================================================================== */
+    .slide-safe-content {
+      position: relative;
+      z-index: 20;
+      width: 100%;
+      height: 100%;
+      padding: 56px 20px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      pointer-events: none; /* Tap passes to carousel gestures */
+    }
+
+    .slide-interactive-layer {
+      pointer-events: auto; /* Clickable badges, cards, buttons */
+    }
+
+    /* Editorial Eyebrow Tag */
+    .slide-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(27, 122, 94, 0.45);
+      border: 1px solid rgba(46, 197, 154, 0.5);
+      color: var(--c-emerald-vivid);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+      margin-bottom: 12px;
+    }
+
+    .slide-tag.tag-gold {
+      background: rgba(197, 168, 128, 0.2);
+      border-color: rgba(240, 215, 172, 0.6);
+      color: var(--c-gold-bright);
+    }
+
+    /* Headlines */
+    .slide-title-serif {
+      font-family: var(--font-editorial);
+      font-size: 27px;
+      line-height: 1.15;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+      margin-bottom: 8px;
+    }
+
+    .slide-title-serif em {
+      font-style: italic;
+      color: var(--c-gold-bright);
+      font-weight: 400;
+    }
+
+    .slide-title-serif .highlight-emerald {
+      color: var(--c-emerald-vivid);
+      font-style: normal;
+    }
+
+    .slide-sub-script {
+      font-family: var(--font-script);
+      font-size: 28px;
+      color: var(--c-gold-bright);
+      line-height: 1;
+      display: block;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    }
+
+    .slide-desc-text {
+      font-size: 13.5px;
+      line-height: 1.45;
+      color: var(--c-cream-dim);
+      font-weight: 400;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+    }
+
+    /* Glass Cards & Benefit Rows */
+    .benefit-card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .benefit-item {
+      background: rgba(6, 26, 20, 0.75);
+      border: 1px solid rgba(197, 168, 128, 0.28);
+      border-left: 3px solid var(--c-emerald-vivid);
+      border-radius: 12px;
+      padding: 10px 14px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .benefit-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 3px;
+    }
+
+    .benefit-item-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #FFFFFF;
+      letter-spacing: 0.02em;
+    }
+
+    .benefit-item-price {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--c-gold-bright);
+      white-space: nowrap;
+    }
+
+    .benefit-item-desc {
+      font-size: 11.5px;
+      color: var(--c-cream-muted);
+      line-height: 1.35;
+    }
+
+    /* Key Stat Callout Pill */
+    .stat-callout-box {
+      margin-top: 14px;
+      background: linear-gradient(135deg, rgba(27, 122, 94, 0.35) 0%, rgba(6, 26, 20, 0.75) 100%);
+      border: 1px dashed rgba(46, 197, 154, 0.6);
+      border-radius: 14px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .stat-callout-num {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--c-emerald-vivid);
+      line-height: 1;
+    }
+
+    .stat-callout-text {
+      font-size: 11.5px;
+      line-height: 1.35;
+      color: var(--c-cream-dim);
+    }
+
+    /* Bottom Action Bar inside Slide */
+    .slide-bottom-bar {
+      margin-top: auto;
+      padding-top: 10px;
+    }
+
+    .swipe-cue {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--c-gold-bright);
+      animation: pulseCue 2s infinite ease-in-out;
+    }
+
+    .swipe-cue svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+      animation: bounceArrow 1.5s infinite ease-in-out;
+    }
+
+    @keyframes pulseCue {
+      0%, 100% { opacity: 0.85; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.02); }
+    }
+
+    @keyframes bounceArrow {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(4px); }
+    }
+
+    /* VIP Booking Button (Slide 6) */
+    .btn-vip-book {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: linear-gradient(135deg, var(--c-emerald) 0%, var(--c-emerald-deep) 100%);
+      border: 1px solid var(--c-emerald-vivid);
+      color: #FFFFFF;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      padding: 13px 20px;
+      border-radius: 999px;
+      box-shadow: 0 8px 24px rgba(27, 122, 94, 0.45);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+    }
+
+    .btn-vip-book:active {
+      transform: scale(0.97);
+    }
+
+    /* TikTok Tap Zones (Invisible Left / Right Tap to Navigate) */
+    .tap-nav-left, .tap-nav-right {
+      position: absolute;
+      top: 60px;
+      bottom: 70px;
+      width: 30%;
+      z-index: 30;
+      cursor: pointer;
+    }
+
+    .tap-nav-left { left: 0; }
+    .tap-nav-right { right: 0; }
+
+    /* ==========================================================================
+       TIKTOK SAFE ZONES OVERLAY (Interactive Inspector)
+       ========================================================================== */
+    .tiktok-safe-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 45;
+      pointer-events: none;
+      display: none;
+    }
+
+    .tiktok-safe-overlay.visible {
+      display: block;
+    }
+
+    /* Top TikTok Header Simulation */
+    .tt-overlay-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 54px;
+      background: rgba(255, 0, 80, 0.15);
+      border-bottom: 1px dashed rgba(255, 0, 80, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #FF0050;
+      font-family: var(--font-mono);
+      font-weight: 700;
+    }
+
+    /* Right TikTok Interaction Buttons Simulation (Like, Comment, Share, Sound) */
+    .tt-overlay-right {
+      position: absolute;
+      right: 0;
+      top: 240px;
+      width: 58px;
+      bottom: 100px;
+      background: rgba(255, 0, 80, 0.12);
+      border-left: 1px dashed rgba(255, 0, 80, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px 0;
+      color: #FF0050;
+      font-size: 9px;
+      font-family: var(--font-mono);
+      text-align: center;
+    }
+
+    .tt-overlay-right span {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 6px;
+      padding: 3px 5px;
+    }
+
+    /* Bottom TikTok Caption / Audio Simulation */
+    .tt-overlay-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 90px;
+      background: rgba(255, 0, 80, 0.15);
+      border-top: 1px dashed rgba(255, 0, 80, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #FF0050;
+      font-family: var(--font-mono);
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       EXTERNAL CAROUSEL CONTROLS (Desktop Arrows & Thumbnails)
+       ========================================================================== */
+    .nav-arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(6, 26, 20, 0.9);
+      border: 1px solid var(--c-gold);
+      color: var(--c-gold-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 60;
+      transition: all 160ms var(--ease-out);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
+
+    .nav-arrow-btn:hover {
+      background: var(--c-emerald);
+      color: #fff;
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .nav-arrow-btn:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    .nav-arrow-prev { left: -60px; }
+    .nav-arrow-next { right: -60px; }
+
+    /* ==========================================================================
+       GRID VIEW MODE (Shows all 6 slides side by side for direct screenshots)
+       ========================================================================== */
+    body.mode-grid .deck-container {
+      max-width: 1300px;
+      padding: 24px;
+    }
+
+    body.mode-grid .tiktok-frame {
+      display: none;
+    }
+
+    .grid-export-view {
+      display: none;
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
+      justify-content: center;
+    }
+
+    body.mode-grid .grid-export-view {
+      display: grid;
+    }
+
+    .grid-slide-card {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 9 / 16;
+      border-radius: 28px;
+      overflow: hidden;
+      margin: 0 auto;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(197, 168, 128, 0.3);
+      background: var(--c-emerald-night);
+    }
+
+    .grid-slide-header-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 40;
+      background: rgba(6, 26, 20, 0.85);
+      border: 1px solid var(--c-gold);
+      color: var(--c-gold-bright);
+      font-size: 11px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    /* Print Styles */
+    @media print {
+      .top-toolbar, .nav-arrow-btn, .tiktok-safe-overlay {
+        display: none !important;
+      }
+      body {
+        background: #000;
+      }
+      .grid-export-view {
+        display: block !important;
+      }
+      .grid-slide-card {
+        page-break-after: always;
+        max-width: 100% !important;
+        height: 100vh !important;
+        border-radius: 0 !important;
+      }
+    }
+
+    /* Mobile Responsive tweaks */
+    @media (max-width: 580px) {
+      .nav-arrow-btn {
+        display: none;
+      }
+      .tiktok-frame {
+        max-height: calc(100dvh - 75px);
+        border-radius: 24px;
+      }
+      .slide-safe-content {
+        padding: 50px 16px 36px;
+      }
+      .slide-title-serif {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================================================================= -->
+  <!-- CONTROL TOOLBAR                                                         -->
+  <!-- ======================================================================= -->
+  <header class="top-toolbar">
+    <div class="brand-badge">
+      <div class="brand-badge-emblem">11</div>
+      <div class="brand-badge-info">
+        <h1>11 Secrets de Beauté</h1>
+        <p>TikTok Carousel • Renaissance d'Automne 2026</p>
+      </div>
+    </div>
+
+    <div class="toolbar-actions">
+      <button class="tool-btn" id="btn-toggle-safe" title="Afficher les zones de boutons TikTok (Safe Zones)">
+        <span>👁️</span> Safe Zones
+      </button>
+
+      <button class="tool-btn active" id="btn-mode-carousel" title="Mode défilement TikTok">
+        <span>📱</span> Carousel
+      </button>
+
+      <button class="tool-btn" id="btn-mode-grid" title="Voir les 6 slides en grille haute résolution">
+        <span>▦</span> Grille (6)
+      </button>
+    </div>
+  </header>
+
+  <!-- ======================================================================= -->
+  <!-- MAIN DECK CONTAINER (CAROUSEL MODE)                                     -->
+  <!-- ======================================================================= -->
+  <main class="deck-container">
+    
+    <div style="position: relative;">
+      <!-- Desktop Navigation Arrows -->
+      <button class="nav-arrow-btn nav-arrow-prev" id="btn-prev" aria-label="Slide précédente">←</button>
+      <button class="nav-arrow-btn nav-arrow-next" id="btn-next" aria-label="Slide suivante">→</button>
+
+      <!-- 9:16 Device Canvas -->
+      <div class="tiktok-frame" id="tiktok-viewport">
+        
+        <!-- Story Indicators (6 Segments at Top) -->
+        <div class="story-indicators" id="story-indicators">
+          <div class="story-bar-segment current" data-slide="0"><div class="story-bar-fill"></div></div>
+          <div class="story-bar-segment" data-slide="1"><div class="story-bar-fill"></div></div>
+          <div class="story-bar-segment" data-slide="2"><div class="story-bar-fill"></div></div>
+          <div class="story-bar-segment" data-slide="3"><div class="story-bar-fill"></div></div>
+          <div class="story-bar-segment" data-slide="4"><div class="story-bar-fill"></div></div>
+          <div class="story-bar-segment" data-slide="5"><div class="story-bar-fill"></div></div>
+        </div>
+
+        <!-- Meta Sub-header -->
+        <div class="story-top-meta">
+          <span class="meta-salon-tag">✦ 11 Secrets de Beauté</span>
+          <span class="meta-slide-counter" id="slide-counter-display">01 / 06</span>
+        </div>
+
+        <!-- Invisible Tap Navigation Zones (Left 30% = Prev, Right 30% = Next) -->
+        <div class="tap-nav-left" id="tap-prev" title="Appuyez à gauche pour la slide précédente"></div>
+        <div class="tap-nav-right" id="tap-next" title="Appuyez à droite pour la slide suivante"></div>
+
+        <!-- TikTok Safe Zones Overlay (Toggleable) -->
+        <div class="tiktok-safe-overlay" id="tiktok-safe-overlay">
+          <div class="tt-overlay-top">ZONE D'EN-TÊTE TIKTOK (Pour toi / Live)</div>
+          <div class="tt-overlay-right">
+            <span>Profil</span>
+            <span>J'aime</span>
+            <span>Comm.</span>
+            <span>Favori</span>
+            <span>Partage</span>
+            <span>Disque</span>
+          </div>
+          <div class="tt-overlay-bottom">ZONE DE LÉGENDE &amp; SON TIKTOK (@11secretsdebeaute)</div>
+        </div>
+
+        <!-- Carousel Track -->
+        <div class="slides-track" id="slides-track">
+
+          <!-- ------------------------------------------------------------- -->
+          <!-- SLIDE 1: HOOK / COUVERTURE ÉDITORIALE                         -->
+          <!-- ------------------------------------------------------------- -->
+          <article class="slide active" data-index="0">
+            <img class="slide-bg-photo" src="assets/images/macro-head-spa.jpg" alt="Rituel Head Spa Automne">
+            <div class="slide-overlay-radial"></div>
+            <div class="slide-overlay-bottom"></div>
+            <div class="slide-grain"></div>
+
+            <div class="slide-safe-content">
+              <div>
+                <span class="slide-tag tag-gold">✦ ÉDITION PRIVILÈGE • OCTOBRE 2026</span>
+                <span class="slide-sub-script">Renaissance d'Automne</span>
+                <h2 class="slide-title-serif">Pourquoi vos cheveux <em class="highlight-emerald">souffrent</em> dès l'arrivée du froid ?</h2>
+              </div>
+
+              <div class="slide-interactive-layer">
+                <div class="stat-callout-box" style="margin-bottom: 14px;">
+                  <div class="stat-callout-num">30%</div>
+                  <div class="stat-callout-text">
+                    <strong>De chute capillaire supplémentaire</strong> constatée en Suisse entre octobre et décembre sans rituel détoxifiant adapté.
+                  </div>
+                </div>
+
+                <div class="slide-bottom-bar">
+                  <div class="swipe-cue">
+                    <span>Glissez pour découvrir le protocole</span>
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+
+          <!-- ------------------------------------------------------------- -->
+          <!-- SLIDE 2: LE CONSTAT SCIENTIFIQUE / LE CUIR CHEVELU            -->
+          <!-- ------------------------------------------------------------- -->
+          <article class="slide" data-index="1">
+            <img class="slide-bg-photo" src="assets/images/detail-spa.jpg" alt="Cuir chevelu et soin">
+            <div class="slide-overlay-radial"></div>
+            <div class="slide-overlay-bottom"></div>
+            <div class="slide-grain"></div>
+
+            <div class="slide-safe-content">
+              <div>
+                <span class="slide-tag">SECRET N°1 • LE DIAGNOSTIC</span>
+                <h2 class="slide-title-serif">Le Climat Suisse étouffe vos <em class="highlight-emerald">follicules</em></h2>
+                <p class="slide-desc-text">
+                  Le choc thermique entre le froid extérieur et le chauffage intérieur cristallise les impuretés à la racine.
+                </p>
+              </div>
+
+              <div class="slide-interactive-layer">
+                <div class="benefit-card-list">
+                  <div class="benefit-item">
+                    <div class="benefit-item-header">
+                      <span class="benefit-item-title">1. Asphyxie des Racines</span>
+                      <span class="benefit-item-price">🚨 Alerte</span>
+                    </div>
+                    <p class="benefit-item-desc">Les résidus de shampoing et la pollution bloquent l'oxygénation de la tige pilaire.</p>
+                  </div>
+
+                  <div class="benefit-item">
+                    <div class="benefit-item-header">
+                      <span class="benefit-item-title">2. Micro-Circulation Ralentie</span>
+                      <span class="benefit-item-price">❄️ Climat</span>
+                    </div>
+                    <p class="benefit-item-desc">Les vaisseaux sanguins se contractent, affaiblissant l'ancrage du cheveu.</p>
+                  </div>
+
+                  <div class="benefit-item">
+                    <div class="benefit-item-header">
+                      <span class="benefit-item-title">3. Pointes Cassantes &amp; Frizz</span>
+                      <span class="benefit-item-price">🌧️ Humidité</span>
+                    </div>
+                    <p class="benefit-item-desc">La kératine naturelle s'altère sous les variations d'humidité lémanique.</p>
+                  </div>
+                </div>
+
+                <div class="slide-bottom-bar" style="margin-top: 14px;">
+                  <div class="swipe-cue">
+                    <span>La solution en cabine privée</span>
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+
+          <!-- ------------------------------------------------------------- -->
+          <!-- SLIDE 3: LE HEAD SPA JAPONAIS DÉTOX                          -->
+          <!-- ------------------------------------------------------------- -->
+          <article class="slide" data-index="2">
+            <img class="slide-bg-photo" src="assets/images/macro-head-spa.jpg" alt="Japanese Head Spa Renens">
+            <div class="slide-overlay-radial"></div>
+            <div class="slide-overlay-bottom"></div>
+            <div class="slide-grain"></div>
+
+            <div class="slide-safe-content">
+              <div>
+                <span class="slide-tag tag-gold">SECRET N°2 • RITUEL ÉTOILE</span>
+                <span class="slide-sub-script">Purification &amp; Bien-Être</span>
+                <h2 class="slide-title-serif">Le Head Spa Japonais <em class="highlight-emerald">Holistique</em></h2>
+              </div>
+
+              <div class="slide-interactive-layer">
+                <div class="benefit-card-list">
+                  <div class="benefit-item">
+                    <div class="benefit-item-header">
+                      <span class="benefit-item-title">Arche d'Eau Chaude &amp; Vapeur</span>
+                      <span class="benefit-item-price">Détente</span>
+                    </div>
+                    <p class="benefit-item-desc">Cascade circulatoire continue pour ouvrir les pores et détendre les cervicales.</p>
+                  </div>
+
+                  <div class="benefit-item">
+                    <div class="benefit-item-header">
+                      <span class="benefit-item-title">Massage Crânien Lymphatique</span>
+                      <span class="benefit-item-price">Oxygène</span>
+                    </div>
+                    <p class="benefit-item-desc">Relance immédiate du flux micro-circulatoire et libération de la sérotonine.</p>
+                  </div>
+
+                  <div class="benefit-item" style="border-left-color: var(--c-gold-bright); background: rgba(197, 168, 128, 0.15);">
+                    <div class="benefit-item-header">
+                      <span class="benefit-item-title">Offre Privilège Découverte</span>
+                      <span class="benefit-item-price">120 CHF <s style="opacity: 0.6; font-size: 11px;">160 CHF</s></span>
+                    </div>
+                    <p class="benefit-item-desc">Rituel complet 1h15 avec diagnostic caméra &amp; gommage végétal.</p>
+                  </div>
+                </div>
+
+                <div class="slide-bottom-bar" style="margin-top: 14px;">
+                  <div class="swipe-cue">
+                    <span>Le blindage de la fibre</span>
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+
+          <!-- ------------------------------------------------------------- -->
+          <!-- SLIDE 4: LISSAGE TANIN & BOTOX CAPILLAIRE                     -->
+          <!-- ------------------------------------------------------------- -->
+          <article class="slide" data-index="3">
+            <img class="slide-bg-photo" src="assets/images/macro-lissage.jpg" alt="Lissage brésilien et botox">
+            <div class="slide-overlay-radial"></div>
+            <div class="slide-overlay-bottom"></div>
+            <div class="slide-grain"></div>
+
+            <div class="slide-safe-content">
+              <div>
+                <span class="slide-tag">SECRET N°3 • BLINDAGE DE LA FIBRE</span>
+                <span class="slide-sub-script">Brillance &amp; Kératine Pure</span>
+                <h2 class="slide-title-serif">Le Soin Botox &amp; <em class="highlight-emerald">Lissage Tanin</em></h2>
+              </div>
+
+              <div class="slide-interactive-layer">
+                <p class="slide-desc-text" style="margin-bottom: 10px;">
+                  Fini les cheveux gonflés par le brouillard et la bruine. Un scellement thermo-actif qui gorge la fibre d'acides aminés.
+                </p>
+
+                <div class="benefit-card-list">
+                  <div class="benefit-item">
+                    <div class="benefit-item-header">
+                      <span class="benefit-item-title">Soin Botox Capillaire</span>
+                      <span class="benefit-item-price">dès 150 CHF</span>
+                    </div>
+                    <p class="benefit-item-desc">Cure de jouvence thermo-réparatrice pour cheveux fatigués, secs ou décolorés.</p>
+                  </div>
+
+                  <div class="benefit-item">
+                    <div class="benefit-item-header">
+                      <span class="benefit-item-title">Lissage Brésilien &amp; Tanin</span>
+                      <span class="benefit-item-price">dès 250 CHF</span>
+                    </div>
+                    <p class="benefit-item-desc">Discipline absolue, toucher soie et brillance miroir pendant 4 à 6 mois.</p>
+                  </div>
+                </div>
+
+                <div class="slide-bottom-bar" style="margin-top: 14px;">
+                  <div class="swipe-cue">
+                    <span>Le raffinement des mains</span>
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+
+          <!-- ------------------------------------------------------------- -->
+          <!-- SLIDE 5: ONGLERIE RUSSE DE HAUTE PRÉCISION                    -->
+          <!-- ------------------------------------------------------------- -->
+          <article class="slide" data-index="4">
+            <img class="slide-bg-photo" src="assets/images/macro-onglerie.jpg" alt="Manucure Russe Haute Précision">
+            <div class="slide-overlay-radial"></div>
+            <div class="slide-overlay-bottom"></div>
+            <div class="slide-grain"></div>
+
+            <div class="slide-safe-content">
+              <div>
+                <span class="slide-tag tag-gold">SECRET N°4 • HAUTE PRÉCISION</span>
+                <span class="slide-sub-script">L'Art du Détail</span>
+                <h2 class="slide-title-serif">Manucure Russe &amp; <em class="highlight-emerald">Gainage Gel</em></h2>
+              </div>
+
+              <div class="slide-interactive-layer">
+                <p class="slide-desc-text" style="margin-bottom: 10px;">
+                  L'exigence d'un contour d'ongle net au millimètre près et un renfort adapté pour affronter la saison froide.
+                </p>
+
+                <div class="benefit-card-list">
+                  <div class="benefit-item">
+                    <div class="benefit-item-header">
+                      <span class="benefit-item-title">Cuticules Parfaites sans repousse visible</span>
+                      <span class="benefit-item-price">✦ Précision</span>
+                    </div>
+                    <p class="benefit-item-desc">Technique mécanique combinée douce et ultra-précise pour un résultat net.</p>
+                  </div>
+
+                  <div class="benefit-item">
+                    <div class="benefit-item-header">
+                      <span class="benefit-item-title">Gainage &amp; Tenue 4-5 Semaines</span>
+                      <span class="benefit-item-price">85 CHF</span>
+                    </div>
+                    <p class="benefit-item-desc">Renfort d'ongle naturel sans casse, couleur sous cuticule et finition miroir.</p>
+                  </div>
+                </div>
+
+                <div class="slide-bottom-bar" style="margin-top: 14px;">
+                  <div class="swipe-cue">
+                    <span>Accéder aux places privées</span>
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+
+          <!-- ------------------------------------------------------------- -->
+          <!-- SLIDE 6: APPEL À L'ACTION & RÉSERVATION VIP                   -->
+          <!-- ------------------------------------------------------------- -->
+          <article class="slide" data-index="5">
+            <img class="slide-bg-photo" src="assets/images/facade-11-secrets.jpg" alt="Salon 11 Secrets de Beauté Renens">
+            <div class="slide-overlay-radial" style="background: radial-gradient(circle at 50% 30%, rgba(6, 26, 20, 0.7) 0%, rgba(6, 26, 20, 0.98) 75%, #051510 100%);"></div>
+            <div class="slide-overlay-bottom"></div>
+            <div class="slide-grain"></div>
+
+            <div class="slide-safe-content">
+              <div>
+                <span class="slide-tag tag-gold">✦ ACCÈS CONFIDENTIEL</span>
+                <span class="slide-sub-script">Dominique vous reçoit</span>
+                <h2 class="slide-title-serif">Seulement <em class="highlight-emerald">4 Places VIP</em> par semaine</h2>
+                <p class="slide-desc-text">
+                  En cabine privée à Renens, l'institut vous est entièrement réservé. Pas d'attente, pas de bruit.
+                </p>
+              </div>
+
+              <div class="slide-interactive-layer">
+                <div class="benefit-card-list" style="margin-bottom: 14px;">
+                  <div class="benefit-item" style="border-left-color: var(--c-gold-bright);">
+                    <div class="benefit-item-header">
+                      <span class="benefit-item-title">📍 Rue de Lausanne 11, 1020 Renens</span>
+                      <span class="benefit-item-price">Gare 2 min</span>
+                    </div>
+                    <p class="benefit-item-desc">Parking à proximité • Accès discret et personnalisé.</p>
+                  </div>
+
+                  <div class="benefit-item" style="background: rgba(46, 197, 154, 0.15); border-left-color: var(--c-emerald-vivid);">
+                    <div class="benefit-item-header">
+                      <span class="benefit-item-title">🎁 Code Privilège TikTok : RENAISSANCE26</span>
+                      <span class="benefit-item-price">-20 CHF</span>
+                    </div>
+                    <p class="benefit-item-desc">Déduit directement de votre premier rituel réservé en octobre 2026.</p>
+                  </div>
+                </div>
+
+                <div class="slide-bottom-bar">
+                  <a class="btn-vip-book" href="https://wa.me/41766606026?text=Bonjour%20Dominique,%20je%20souhaite%20r%C3%A9server%20un%20Rituel%20Renaissance%20d'Automne%20avec%20le%20code%20RENAISSANCE26" target="_blank" rel="noopener">
+                    <span>📲 RÉSERVER MON RITUEL PAR WHATSAPP</span>
+                  </a>
+                  <p style="font-size: 10px; text-align: center; color: var(--c-cream-muted); margin-top: 8px;">
+                    076 660 60 26 • Sur rendez-vous uniquement
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===================================================================== -->
+    <!-- GRID VIEW CONTAINER (Shown when in Grille mode for quick capture)      -->
+    <!-- ===================================================================== -->
+    <div class="grid-export-view" id="grid-export-view">
+      
+      <!-- Card 1 -->
+      <div class="grid-slide-card">
+        <span class="grid-slide-header-badge">Slide 01 • Couverture</span>
+        <img class="slide-bg-photo" src="assets/images/macro-head-spa.jpg" alt="Slide 1">
+        <div class="slide-overlay-radial"></div>
+        <div class="slide-overlay-bottom"></div>
+        <div class="slide-safe-content">
+          <div>
+            <span class="slide-tag tag-gold">✦ OCTOBRE 2026</span>
+            <span class="slide-sub-script">Renaissance d'Automne</span>
+            <h2 class="slide-title-serif">Pourquoi vos cheveux <em class="highlight-emerald">souffrent</em> dès l'arrivée du froid ?</h2>
+          </div>
+          <div>
+            <div class="stat-callout-box">
+              <div class="stat-callout-num">30%</div>
+              <div class="stat-callout-text">De chute capillaire supplémentaire constatée en Suisse entre octobre et décembre sans rituel détoxifiant.</div>
+            </div>
+            <div class="swipe-cue" style="margin-top: 12px;"><span>Glissez pour découvrir 👉</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="grid-slide-card">
+        <span class="grid-slide-header-badge">Slide 02 • Le Constat</span>
+        <img class="slide-bg-photo" src="assets/images/detail-spa.jpg" alt="Slide 2">
+        <div class="slide-overlay-radial"></div>
+        <div class="slide-overlay-bottom"></div>
+        <div class="slide-safe-content">
+          <div>
+            <span class="slide-tag">SECRET N°1 • DIAGNOSTIC</span>
+            <h2 class="slide-title-serif">Le Climat Suisse étouffe vos <em class="highlight-emerald">follicules</em></h2>
+            <p class="slide-desc-text">Le choc thermique entre vent d'automne et radiateurs cristallise les impuretés.</p>
+          </div>
+          <div class="benefit-card-list">
+            <div class="benefit-item"><span class="benefit-item-title">1. Asphyxie des Racines</span><p class="benefit-item-desc">Les résidus et sébum empêchent la repousse saine.</p></div>
+            <div class="benefit-item"><span class="benefit-item-title">2. Micro-Circulation Ralentie</span><p class="benefit-item-desc">Ancrage affaibli et perte de densité.</p></div>
+            <div class="benefit-item"><span class="benefit-item-title">3. Pointes Cassantes &amp; Frizz</span><p class="benefit-item-desc">Humidité lémanique et perte de kératine.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="grid-slide-card">
+        <span class="grid-slide-header-badge">Slide 03 • Head Spa</span>
+        <img class="slide-bg-photo" src="assets/images/macro-head-spa.jpg" alt="Slide 3">
+        <div class="slide-overlay-radial"></div>
+        <div class="slide-overlay-bottom"></div>
+        <div class="slide-safe-content">
+          <div>
+            <span class="slide-tag tag-gold">SECRET N°2 • RITUEL ÉTOILE</span>
+            <span class="slide-sub-script">Purification &amp; Bien-Être</span>
+            <h2 class="slide-title-serif">Le Head Spa Japonais <em class="highlight-emerald">Holistique</em></h2>
+          </div>
+          <div class="benefit-card-list">
+            <div class="benefit-item"><span class="benefit-item-title">Arche d'Eau Chaude &amp; Vapeur</span><p class="benefit-item-desc">Cascade circulatoire continue pour libérer les tensions.</p></div>
+            <div class="benefit-item"><span class="benefit-item-title">Massage Crânien Lymphatique</span><p class="benefit-item-desc">Relance du flux sanguin et apaisement profond.</p></div>
+            <div class="benefit-item" style="border-left-color: var(--c-gold-bright);"><span class="benefit-item-title">Offre Privilège Découverte : 120 CHF</span><p class="benefit-item-desc">Séance complète 1h15 au lieu de 160 CHF.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="grid-slide-card">
+        <span class="grid-slide-header-badge">Slide 04 • Lissage &amp; Botox</span>
+        <img class="slide-bg-photo" src="assets/images/macro-lissage.jpg" alt="Slide 4">
+        <div class="slide-overlay-radial"></div>
+        <div class="slide-overlay-bottom"></div>
+        <div class="slide-safe-content">
+          <div>
+            <span class="slide-tag">SECRET N°3 • BLINDAGE FIBRE</span>
+            <span class="slide-sub-script">Brillance &amp; Kératine Pure</span>
+            <h2 class="slide-title-serif">Le Soin Botox &amp; <em class="highlight-emerald">Lissage Tanin</em></h2>
+            <p class="slide-desc-text">Discipline durable contre le brouillard et l'humidité.</p>
+          </div>
+          <div class="benefit-card-list">
+            <div class="benefit-item"><span class="benefit-item-title">Soin Botox Capillaire • dès 150 CHF</span><p class="benefit-item-desc">Cure de jouvence thermo-réparatrice.</p></div>
+            <div class="benefit-item"><span class="benefit-item-title">Lissage Brésilien &amp; Tanin • dès 250 CHF</span><p class="benefit-item-desc">Toucher soie et brillance miroir pendant 5 mois.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="grid-slide-card">
+        <span class="grid-slide-header-badge">Slide 05 • Onglerie Russe</span>
+        <img class="slide-bg-photo" src="assets/images/macro-onglerie.jpg" alt="Slide 5">
+        <div class="slide-overlay-radial"></div>
+        <div class="slide-overlay-bottom"></div>
+        <div class="slide-safe-content">
+          <div>
+            <span class="slide-tag tag-gold">SECRET N°4 • HAUTE PRÉCISION</span>
+            <span class="slide-sub-script">L'Art du Détail</span>
+            <h2 class="slide-title-serif">Manucure Russe &amp; <em class="highlight-emerald">Gainage Gel</em></h2>
+            <p class="slide-desc-text">L'exigence d'un contour d'ongle net au millimètre près.</p>
+          </div>
+          <div class="benefit-card-list">
+            <div class="benefit-item"><span class="benefit-item-title">Technique Combinée Russe</span><p class="benefit-item-desc">Nettoyage profond des cuticules sans repousse visible.</p></div>
+            <div class="benefit-item"><span class="benefit-item-title">Gainage &amp; Tenue 4-5 Semaines • 85 CHF</span><p class="benefit-item-desc">Renfort protecteur anti-casse pour l'automne.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="grid-slide-card">
+        <span class="grid-slide-header-badge">Slide 06 • Réservation VIP</span>
+        <img class="slide-bg-photo" src="assets/images/facade-11-secrets.jpg" alt="Slide 6">
+        <div class="slide-overlay-radial"></div>
+        <div class="slide-overlay-bottom"></div>
+        <div class="slide-safe-content">
+          <div>
+            <span class="slide-tag tag-gold">✦ ACCÈS CONFIDENTIEL</span>
+            <span class="slide-sub-script">Dominique vous reçoit</span>
+            <h2 class="slide-title-serif">Seulement <em class="highlight-emerald">4 Places VIP</em> par semaine</h2>
+          </div>
+          <div>
+            <div class="benefit-item" style="margin-bottom: 8px;"><span class="benefit-item-title">📍 Rue de Lausanne 11, Renens</span><p class="benefit-item-desc">Salon privé intimiste à 2 min de la gare.</p></div>
+            <div class="benefit-item" style="border-left-color: var(--c-gold-bright); margin-bottom: 12px;"><span class="benefit-item-title">🎁 Code TikTok : RENAISSANCE26</span><p class="benefit-item-desc">-20 CHF sur votre premier rituel réservé.</p></div>
+            <div class="btn-vip-book" style="font-size: 13px;">📲 076 660 60 26 • RÉSERVER</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ======================================================================= -->
+  <!-- JAVASCRIPT: EMIL GESTURES, VELOCITY, KEYBOARD & TIKTOK CONTROL          -->
+  <!-- ======================================================================= -->
+  <script>
+    (function() {
+      const slides = Array.from(document.querySelectorAll('.slides-track .slide'));
+      const segments = Array.from(document.querySelectorAll('.story-bar-segment'));
+      const counterDisplay = document.getElementById('slide-counter-display');
+      const totalSlides = slides.length;
+      let currentIndex = 0;
+
+      // Update Slides & Story Indicators
+      function goToSlide(index) {
+        if (index < 0) index = 0;
+        if (index >= totalSlides) index = totalSlides - 1;
+        if (index === currentIndex && slides[index].classList.contains('active')) return;
+
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active', 'prev');
+          if (i === index) {
+            slide.classList.add('active');
+          } else if (i < index) {
+            slide.classList.add('prev');
+          }
+        });
+
+        // Update top story bars
+        segments.forEach((seg, i) => {
+          seg.classList.remove('current', 'viewed');
+          if (i === index) {
+            seg.classList.add('current');
+          } else if (i < index) {
+            seg.classList.add('viewed');
+          }
+        });
+
+        // Update counter (e.g. 01 / 06)
+        counterDisplay.textContent = `0${index + 1} / 0${totalSlides}`;
+        currentIndex = index;
+      }
+
+      function nextSlide() {
+        if (currentIndex < totalSlides - 1) {
+          goToSlide(currentIndex + 1);
+        } else {
+          // Pulse last slide slightly
+          const activeSlide = slides[currentIndex];
+          activeSlide.style.transform = 'scale(0.98)';
+          setTimeout(() => { activeSlide.style.transform = 'scale(1)'; }, 150);
+        }
+      }
+
+      function prevSlide() {
+        if (currentIndex > 0) {
+          goToSlide(currentIndex - 1);
+        }
+      }
+
+      // Tap Navigation & Buttons
+      document.getElementById('tap-next').addEventListener('click', nextSlide);
+      document.getElementById('tap-prev').addEventListener('click', prevSlide);
+      document.getElementById('btn-next').addEventListener('click', nextSlide);
+      document.getElementById('btn-prev').addEventListener('click', prevSlide);
+
+      // Direct tap on story segments
+      segments.forEach((seg, i) => {
+        seg.addEventListener('click', () => goToSlide(i));
+      });
+
+      // Keyboard navigation (Arrow keys + Space)
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+          e.preventDefault();
+          nextSlide();
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+          e.preventDefault();
+          prevSlide();
+        }
+      });
+
+      // Touch Gestures with Emil Kowalski Velocity Detection
+      const viewport = document.getElementById('tiktok-viewport');
+      let touchStartX = 0;
+      let touchStartTime = 0;
+      const SWIPE_THRESHOLD = 40;
+
+      viewport.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 1) return; // Ignore multi-touch per Emil's rule
+        touchStartX = e.touches[0].clientX;
+        touchStartTime = Date.now();
+      }, { passive: true });
+
+      viewport.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const timeTaken = Date.now() - touchStartTime;
+        const distanceX = touchStartX - touchEndX;
+        const velocity = Math.abs(distanceX) / (timeTaken || 1);
+
+        // Momentum dismissal: flick with velocity > 0.11 or distance > threshold
+        if (Math.abs(distanceX) >= SWIPE_THRESHOLD || velocity > 0.11) {
+          if (distanceX > 0) {
+            nextSlide(); // Swiped left -> next
+          } else {
+            prevSlide(); // Swiped right -> prev
+          }
+        }
+      }, { passive: true });
+
+      // Safe Zones Toggle
+      const btnSafe = document.getElementById('btn-toggle-safe');
+      const safeOverlay = document.getElementById('tiktok-safe-overlay');
+      btnSafe.addEventListener('click', () => {
+        safeOverlay.classList.toggle('visible');
+        btnSafe.classList.toggle('active');
+      });
+
+      // Mode Toggles: Carousel vs Grid
+      const btnCarousel = document.getElementById('btn-mode-carousel');
+      const btnGrid = document.getElementById('btn-mode-grid');
+
+      btnCarousel.addEventListener('click', () => {
+        document.body.classList.remove('mode-grid');
+        btnCarousel.classList.add('active');
+        btnGrid.classList.remove('active');
+      });
+
+      btnGrid.addEventListener('click', () => {
+        document.body.classList.add('mode-grid');
+        btnGrid.classList.add('active');
+        btnCarousel.classList.remove('active');
+      });
+
+    })();
+  </script>
+
+</body>
+</html>
